@@ -1,0 +1,18 @@
+{% extends 'django_mfa/base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="panel panel-default text-right">
+  <div class="panel-heading">
+    <h3> קודי שחזור חשבון </h3>
+    <h5>השתמש בקודים אלו אם שכחת / איבדת סיסמא</h5>
+    <h5>שים לב: לצורך אבטחה, מספר הקודים לשחזור מוגבל וכל קוד נמחק לאחר שימוש</h5>
+  </div>
+  <div class="panel-body">
+    {% for i in codes %}
+    <p>{{i}}</p>
+    {% endfor %}
+  </div>
+</div>
+<a href="{% url 'users:mfa:recovery_codes_download' %}" class="btn btn-default" >הורדה</a>
+<a href="{{request.META.HTTP_REFERER}}" class="btn btn-default">חזור</a>
+{% endblock %}

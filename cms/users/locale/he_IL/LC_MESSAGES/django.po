@@ -1,0 +1,623 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# lior abazon <abazon@v15.org.il>, 2015
+# yossi lalum <lyosefh@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Wagtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-09 19:34+0200\n"
+"PO-Revision-Date: 2021-10-15 16:43+0000\n"
+"Last-Translator: Matt Westcott <matthew@torchbox.com>\n"
+"Language-Team: Hebrew (Israel) (http://www.transifex.com/torchbox/wagtail/"
+"language/he_IL/)\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+
+#: .\users\apps.py:8
+msgid "Wagtail users"
+msgstr ""
+
+#: .\users\forms.py:42
+msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr "נחוץ. 30 תווים או פחות. אותיות, ספרות ו @/./+/-/_  בלבד"
+
+#: .\users\forms.py:46
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+msgstr "ערך זה יכול להכיל אותיות, ספרות והתווים @/./+/-/_  בלבד"
+
+#: .\users\forms.py:69
+msgid "A user with that username already exists."
+msgstr "שם משתמש קיים במערכת"
+
+#: .\users\forms.py:70
+msgid "The two password fields didn't match."
+msgstr "שתי הסיסמאות לא מתאימות"
+
+#: .\users\forms.py:73
+msgid "Email"
+msgstr "דואר אלקטרוני"
+
+#: .\users\forms.py:74
+msgid "First Name"
+msgstr "שם פרטי"
+
+#: .\users\forms.py:75
+msgid "Last Name"
+msgstr "שם משפחה"
+
+#: .\users\forms.py:78
+msgid "Password"
+msgstr "סיסמא"
+
+#: .\users\forms.py:80
+msgid "Leave blank if not changing."
+msgstr "השאירו ריק אם לא משנים"
+
+#: .\users\forms.py:82
+msgid "Password confirmation"
+msgstr "אישור סיסמא"
+
+#: .\users\forms.py:84
+msgid "Enter the same password as above, for verification."
+msgstr "הכניסו אותה סיסמא שוב, עבור וידוא"
+
+#: .\users\forms.py:87 .\users\forms.py:215
+msgid "Administrator"
+msgstr "מנהל"
+
+#: .\users\forms.py:88 .\users\forms.py:217
+msgid "Administrators have full access to manage any object or setting."
+msgstr "למנהלים יש גישה מלאה לניהול כל אובייקט או הגדרה"
+
+#: .\users\forms.py:211
+msgid "A group with that name already exists."
+msgstr "קבוצה בשם זה כבר קיימת"
+
+#: .\users\forms.py:315
+msgid "You cannot have multiple permission records for the same page."
+msgstr "לא יכולה להיות לך יותר מרשומה אחת של הרשאות לאותו הדף"
+
+#: .\users\models.py:25
+msgid "submitted notifications"
+msgstr "הודעות שנשלחו"
+
+#: .\users\models.py:27
+msgid "Receive notification when a page is submitted for moderation"
+msgstr "קבלו התראה כשהעמוד הוזן לעריכה"
+
+#: .\users\models.py:31
+msgid "approved notifications"
+msgstr "הודעות שאושרו"
+
+#: .\users\models.py:33
+msgid "Receive notification when your page edit is approved"
+msgstr "קבלו התראה כשעריכת העמוד אושרה"
+
+#: .\users\models.py:37
+msgid "rejected notifications"
+msgstr "הודעות שנדחו"
+
+#: .\users\models.py:39
+msgid "Receive notification when your page edit is rejected"
+msgstr "קבלו התראה כשעריכת העמוד נדחית"
+
+#: .\users\models.py:43
+#, fuzzy
+#| msgid "submitted notifications"
+msgid "updated comments notifications"
+msgstr "הודעות שנשלחו"
+
+#: .\users\models.py:45
+msgid ""
+"Receive notification when comments have been created, resolved, or deleted "
+"on a page that you have subscribed to receive comment notifications on"
+msgstr ""
+
+#: .\users\models.py:49
+msgid "preferred language"
+msgstr ""
+
+#: .\users\models.py:51
+msgid "Select language for the admin"
+msgstr ""
+
+#: .\users\models.py:56
+msgid "current time zone"
+msgstr ""
+
+#: .\users\models.py:58
+msgid "Select your current time zone"
+msgstr ""
+
+#: .\users\models.py:63
+msgid "profile picture"
+msgstr ""
+
+#: .\users\models.py:82
+msgid "user profile"
+msgstr "פרופיל משתמש"
+
+#: .\users\models.py:83
+#, fuzzy
+#| msgid "user profile"
+msgid "user profiles"
+msgstr "פרופיל משתמש"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:4
+#, python-format
+msgid "Assign role to 1 user "
+msgid_plural "Assign role to %(counter)s users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:7
+#: .\users\views\bulk_actions\assign_role.py:17
+msgid "Assign role"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to assign this role to these users?"
+msgstr "האם אתה בטוח שברצונך למחוק משתמש זה?"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:26
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:26
+msgid "You don't have permission to edit this user"
+msgid_plural "You don't have permission to edit these users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:33
+msgid "Yes, assign"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:34
+msgid "No, don't assign"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:4
+#, fuzzy, python-format
+#| msgid "Delete user"
+msgid "Delete 1 user "
+msgid_plural "Delete %(counter)s users"
+msgstr[0] "מחק משתמש"
+msgstr[1] "מחק משתמש"
+msgstr[2] "מחק משתמש"
+msgstr[3] "מחק משתמש"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:7
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:19
+#: .\users\templates\wagtailusers\groups\includes\page_permissions_form.html:13
+#: .\users\views\bulk_actions\delete.py:9 .\users\wagtail_hooks.py:130
+msgid "Delete"
+msgstr "מחק"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to delete these users?"
+msgstr "האם אתה בטוח שברצונך למחוק משתמש זה?"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:26
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "You don't have permission to delete this user"
+msgid_plural "You don't have permission to delete these users"
+msgstr[0] "האם אתה בטוח שברצונך למחוק משתמש זה?"
+msgstr[1] "האם אתה בטוח שברצונך למחוק משתמש זה?"
+msgstr[2] "האם אתה בטוח שברצונך למחוק משתמש זה?"
+msgstr[3] "האם אתה בטוח שברצונך למחוק משתמש זה?"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:33
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:26
+#: .\users\templates\wagtailusers\users\confirm_delete.html:13
+msgid "Yes, delete"
+msgstr "כן, מחק"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:34
+msgid "No, don't delete"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:4
+#, python-format
+msgid "Change active state for 1 user "
+msgid_plural "Change active state for %(counter)s users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:7
+#: .\users\views\bulk_actions\set_active_state.py:21
+msgid "Set active state"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to change the active state for these users?"
+msgstr "האם אתה בטוח שברצונך למחוק משתמש זה?"
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:29
+msgid "You cannot change your own active status"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:36
+msgid "Yes, change state"
+msgstr ""
+
+#: .\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:37
+msgid "No, don't change state"
+msgstr ""
+
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:3
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:6
+#: .\users\templates\wagtailusers\groups\edit.html:43
+#: .\users\views\groups.py:115 .\users\views\groups.py:152
+msgid "Delete group"
+msgstr "מחק קבוצה"
+
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:11
+#, python-format
+msgid ""
+"\n"
+"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
+"strong> member.\n"
+"            "
+msgid_plural ""
+"\n"
+"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
+"strong> members.\n"
+"            "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:19
+msgid ""
+"Deleting this group will revoke this group's permissions from all member "
+"users."
+msgstr "מחיקת קבוצה זו תשלול את ההרשאות עבור כל חבריה"
+
+#: .\users\templates\wagtailusers\groups\confirm_delete.html:23
+#: .\users\views\groups.py:153
+msgid "Are you sure you want to delete this group?"
+msgstr "האם אתם בטוחים כי ברצונכם למחוק קבוצה זו?"
+
+#: .\users\templates\wagtailusers\groups\create.html:4
+#: .\users\templates\wagtailusers\groups\create.html:15
+#: .\users\templates\wagtailusers\groups\create.html:35
+#: .\users\views\groups.py:76
+msgid "Add group"
+msgstr "הוסף קבוצה"
+
+#: .\users\templates\wagtailusers\groups\edit.html:4
+#: .\users\templates\wagtailusers\groups\edit.html:15
+#: .\users\templates\wagtailusers\users\edit.html:4
+#: .\users\templates\wagtailusers\users\edit.html:7
+msgid "Editing"
+msgstr "עריכה"
+
+#: .\users\templates\wagtailusers\groups\edit.html:16
+msgid "View users in this group"
+msgstr ""
+
+#: .\users\templates\wagtailusers\groups\edit.html:40
+#: .\users\templates\wagtailusers\users\edit.html:41
+#: .\users\templates\wagtailusers\users\edit.html:56
+msgid "Save"
+msgstr "שמור"
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:4
+#, fuzzy
+#| msgid "Page permissions"
+msgid "Permissions"
+msgstr "הרשאות עמוד "
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:5
+msgid "Object permissions"
+msgstr "הרשאות אובייקט"
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:16
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:73
+#: .\users\templates\wagtailusers\users\list.html:9
+#: .\users\templates\wagtailusers\users\list.html:13 .\users\views\groups.py:65
+msgid "Name"
+msgstr "שם"
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:17
+msgid "Add"
+msgstr "הוסף"
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:18
+msgid "Change"
+msgstr "שנה"
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:21
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:51
+#, fuzzy
+#| msgid "Other permissions"
+msgid "Custom permissions"
+msgstr "הרשאות אחרות "
+
+#: .\users\templates\wagtailusers\groups\includes\formatted_permissions.html:67
+msgid "Other permissions"
+msgstr "הרשאות אחרות "
+
+#: .\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:2
+msgid "Page permissions"
+msgstr "הרשאות עמוד "
+
+#: .\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:22
+msgid "Page"
+msgstr "עמוד"
+
+#: .\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:54
+msgid "Add a page permission"
+msgstr "הוספת הרשאת עמוד"
+
+#: .\users\templates\wagtailusers\groups\index.html:3
+#: .\users\templates\wagtailusers\groups\index.html:16
+msgid "groups"
+msgstr "קבוצות"
+
+#: .\users\templates\wagtailusers\groups\index.html:17
+#: .\users\views\groups.py:56
+msgid "Add a group"
+msgstr "הוספת קבוצה"
+
+#: .\users\templates\wagtailusers\groups\results.html:8
+#, python-format
+msgid "Sorry, no groups match \"%(query)s\""
+msgstr ""
+
+#: .\users\templates\wagtailusers\groups\results.html:11
+#, python-format
+msgid ""
+"There are no groups configured. Why not <a href="
+"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\confirm_delete.html:3
+#: .\users\templates\wagtailusers\users\confirm_delete.html:6
+#: .\users\templates\wagtailusers\users\edit.html:43
+#: .\users\templates\wagtailusers\users\edit.html:58
+msgid "Delete user"
+msgstr "מחק משתמש"
+
+#: .\users\templates\wagtailusers\users\confirm_delete.html:10
+msgid "Are you sure you want to delete this user?"
+msgstr "האם אתה בטוח שברצונך למחוק משתמש זה?"
+
+#: .\users\templates\wagtailusers\users\create.html:4
+#: .\users\templates\wagtailusers\users\create.html:7
+#: .\users\templates\wagtailusers\users\create.html:43
+msgid "Add user"
+msgstr "הוספת משתמש"
+
+#: .\users\templates\wagtailusers\users\create.html:11
+#: .\users\templates\wagtailusers\users\edit.html:11
+msgid "Account"
+msgstr "חשבון"
+
+#: .\users\templates\wagtailusers\users\create.html:12
+#: .\users\templates\wagtailusers\users\create.html:36
+#: .\users\templates\wagtailusers\users\edit.html:12
+msgid "Roles"
+msgstr "תפקידים"
+
+#: .\users\templates\wagtailusers\users\index.html:3
+#: .\users\templates\wagtailusers\users\index.html:24
+#: .\users\wagtail_hooks.py:70 .\users\wagtail_hooks.py:120
+msgid "Users"
+msgstr "משתמשים"
+
+#: .\users\templates\wagtailusers\users\index.html:25
+msgid "Add a user"
+msgstr "הוספת משתמש"
+
+#: .\users\templates\wagtailusers\users\index.html:34
+msgid "Select all users in listing"
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\list.html:20
+#: .\users\templates\wagtailusers\users\list.html:24
+msgid "Username"
+msgstr "שם משתמש"
+
+#: .\users\templates\wagtailusers\users\list.html:28
+msgid "Level"
+msgstr "רמה"
+
+#: .\users\templates\wagtailusers\users\list.html:29
+msgid "Status"
+msgstr "מצב"
+
+#: .\users\templates\wagtailusers\users\list.html:30
+msgid "Last Login"
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\list.html:47
+msgid "Admin"
+msgstr "מנהל"
+
+#: .\users\templates\wagtailusers\users\list.html:48
+#: .\users\views\bulk_actions\set_active_state.py:12
+msgid "Active"
+msgstr "מופעל"
+
+#: .\users\templates\wagtailusers\users\list.html:48
+#: .\users\views\bulk_actions\set_active_state.py:13
+msgid "Inactive"
+msgstr "כבוי"
+
+#: .\users\templates\wagtailusers\users\list.html:49
+#, python-format
+msgid "%(time_period)s ago"
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\results.html:5
+#, python-format
+msgid ""
+"\n"
+"            There is %(counter)s match\n"
+"        "
+msgid_plural ""
+"\n"
+"            There are %(counter)s matches\n"
+"        "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\templates\wagtailusers\users\results.html:21
+#, python-format
+msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\results.html:28
+#, python-format
+msgid ""
+"The %(group_name)s group has no users configured. Why not <a href="
+"\"%(wagtailusers_add_url)s\">add some</a>?"
+msgstr ""
+
+#: .\users\templates\wagtailusers\users\results.html:31
+#, python-format
+msgid ""
+"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
+"\">add some</a>?"
+msgstr ""
+
+#: .\users\views\bulk_actions\assign_role.py:19
+msgid "Assign role to selected users"
+msgstr ""
+
+#: .\users\views\bulk_actions\assign_role.py:42
+#, python-format
+msgid "%(num_parent_objects)d user has been assigned as %(role)s"
+msgid_plural "%(num_parent_objects)d users have been assigned as %(role)s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\views\bulk_actions\delete.py:11
+#, fuzzy
+#| msgid "Delete this user"
+msgid "Delete selected users"
+msgstr "מחק משתמש זה"
+
+#: .\users\views\bulk_actions\delete.py:34
+#, python-format
+msgid "%(num_parent_objects)d user has been deleted"
+msgid_plural "%(num_parent_objects)d users have been deleted"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\views\bulk_actions\set_active_state.py:23
+msgid "Change the active state for selected users"
+msgstr ""
+
+#: .\users\views\bulk_actions\set_active_state.py:59
+#, python-format
+msgid "%(num_parent_objects)d user has been marked as active"
+msgid_plural "%(num_parent_objects)d users have been marked as active"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\views\bulk_actions\set_active_state.py:67
+#, python-format
+msgid "%(num_parent_objects)d user has been marked as inactive"
+msgid_plural "%(num_parent_objects)d users have been marked as inactive"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\users\views\groups.py:55 .\users\wagtail_hooks.py:89
+msgid "Groups"
+msgstr "קבוצות "
+
+#: .\users\views\groups.py:57
+msgid "Search groups"
+msgstr "חיפוש קבוצות"
+
+#: .\users\views\groups.py:77
+#, python-brace-format
+msgid "Group '{0}' created."
+msgstr "קבוצה '{0}' נוצרה"
+
+#: .\users\views\groups.py:113
+#, python-brace-format
+msgid "Group '{0}' updated."
+msgstr "קבוצה '{0}' עודכנה"
+
+#: .\users\views\groups.py:114
+msgid "The group could not be saved due to errors."
+msgstr "לא ניתן לשמור את הקבוצה עקב שגיאות"
+
+#: .\users\views\groups.py:151
+#, python-brace-format
+msgid "Group '{0}' deleted."
+msgstr "קבוצה '{0}' נמחקה"
+
+#: .\users\views\users.py:85 .\users\views\users.py:93
+msgid "Search users"
+msgstr "חיפוש משתמשים"
+
+#: .\users\views\users.py:144
+#, python-brace-format
+msgid "User '{0}' created."
+msgstr "משתמש '{0}' נוצר"
+
+#: .\users\views\users.py:145 .\users\views\users.py:184
+#: .\users\wagtail_hooks.py:128
+msgid "Edit"
+msgstr "ערוך"
+
+#: .\users\views\users.py:153
+msgid "The user could not be created due to errors."
+msgstr "לא ניתן ליצור את המשתמש עקב שגיאה"
+
+#: .\users\views\users.py:183
+#, python-brace-format
+msgid "User '{0}' updated."
+msgstr "משתמש '{0}' עודכן "
+
+#: .\users\views\users.py:192
+msgid "The user could not be saved due to errors."
+msgstr "לא ניתן לשמור את המשתמש עקב שגיאות"
+
+#: .\users\views\users.py:218
+#, fuzzy, python-brace-format
+#| msgid "User '{0}' created."
+msgid "User '{0}' deleted."
+msgstr "משתמש '{0}' נוצר"
+
+#: .\users\wagtail_hooks.py:128
+msgid "Edit this user"
+msgstr "ערוך משתמש זה"
+
+#: .\users\wagtail_hooks.py:130
+msgid "Delete this user"
+msgstr "מחק משתמש זה"

@@ -1,0 +1,321 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+{% block main %}
+
+
+<style>
+  body{margin-top:20px;
+    background-color: #e4e6e9;
+    color: #41464d;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn-a-brc-tp:not(.disabled):not(:disabled).active, .btn-brc-tp, .btn-brc-tp:focus:not(:hover):not(:active):not(.active):not(.dropdown-toggle), .btn-h-brc-tp:hover, .btn.btn-f-brc-tp:focus, .btn.btn-h-brc-tp:hover {
+    border-color: transparent;
+}
+.btn-outline-blue {
+    color: #0d6ce1;
+    border-color: #5a9beb;
+    background-color: transparent;
+}
+.btn {
+    cursor: pointer;
+    position: relative;
+    z-index: auto;
+    border-radius: .175rem;
+    transition: color .15s,background-color .15s,border-color .15s,box-shadow .15s,opacity .15s;
+}
+.border-2 {
+    border-width: 2px!important;
+    border-style: solid!important;
+    border-color: transparent;
+}
+.bgc-white {
+    background-color: #fff!important;
+}
+
+
+.text-green-d1 {
+    color: #277b5d!important;
+}
+.letter-spacing {
+    letter-spacing: .5px!important;
+}
+.font-bolder, .text-600 {
+    font-weight: 600!important;
+}
+.text-170 {
+    font-size: 1.7em!important;
+}
+
+.text-purple-d1 {
+    color: #6d62b5!important;
+}
+
+.text-primary-d1 {
+    color: #276ab4!important;
+}
+.text-secondary-d1 {
+    color: #5f718b!important;
+}
+.text-180 {
+    font-size: 1.8em!important;
+}
+.text-150 {
+    font-size: 1.5em!important;
+}
+.text-danger-m3 {
+    color: #e05858!important;
+}
+.rotate-45 {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.position-l {
+    left: 0;
+}
+.position-b, .position-bc, .position-bl, .position-br, .position-center, .position-l, .position-lc, .position-r, .position-rc, .position-t, .position-tc, .position-tl, .position-tr {
+    position: absolute!important;
+    display: block;
+}
+.mt-n475, .my-n475 {
+    margin-top: -2.5rem!important;
+}
+.ml-35, .mx-35 {
+    margin-left: 1.25rem!important;
+}
+
+.text-dark-l1 {
+    color: #56585e!important;
+}
+.text-90 {
+    font-size: .9em!important;
+}
+.text-left {
+    text-align: left!important;
+}
+
+.mt-25, .my-25 {
+    margin-top: .75rem!important;
+}
+
+.text-110 {
+    font-size: 1.1em!important;
+}
+
+.deleted-text{
+text-decoration:line-through;;    
+}
+
+*, a:hover {
+    all: none;
+}
+
+
+
+/**** precetege circle ****/
+
+.progress-pie-chart {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: absolute;
+}
+.progress-pie-chart.gt-50 {
+  background-color: #81CE97;
+}
+
+.ppc-progress {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 35px);
+  top: calc(50% - 35px);
+  width: 70px;
+  height: 70px;
+  clip: rect(0, 70px, 70px, 35px);
+}
+.ppc-progress .ppc-progress-fill {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 35px);
+  top: calc(50% - 35px);
+  width: 70px;
+  height: 70px;
+  clip: rect(0, 35px, 70px, 0);
+  background: #81CE97;
+  transform: rotate(60deg);
+}
+.gt-50 .ppc-progress {
+  clip: rect(0, 35px, 70px, 0);
+}
+.gt-50 .ppc-progress .ppc-progress-fill {
+  clip: rect(0, 70px, 70px, 35px);
+  background: #E5E5E5;
+}
+
+.ppc-percents {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 60.8695652174px/2);
+  top: calc(50% - 60.8695652174px/2);
+  width: 60.8695652174px;
+  height: 60.8695652174px;
+  background: #fff;
+  text-align: center;
+  display: table;
+}
+.ppc-percents span {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;
+}
+
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.progress-pie-chart {
+  margin: 50px auto 0;
+}
+
+</style>
+<div  style="margin-top: 10%; padding-right: 5%;">
+    <h3> רשימת הפרויקטים בחשבון זה</h3>
+  {% if projects %}
+  {% for project in projects %}
+   <div class="container">
+     <div class="mt-5">
+           <div class="d-style bgc-white btn btn-brc-tp btn-outline-green btn-h-outline-green btn-a-outline-green w-100 my-2 py-3 shadow-sm border-2">
+             <div class="row align-items-center">
+               <div class="col-12 col-md-4">
+                 <h4 class="pt-3 text-170 text-600 text-green-d1 letter-spacing">
+                   {{project.project_name}}
+                 </h4>
+               </div>
+
+               <div style="position: absolute; padding-right: 5%; margin-top: -23%;">
+               <div class="progress-pie-chart" data-percent="{{project.project_percent}}">
+                <div class="ppc-progress">
+                  <div class="ppc-progress-fill"></div>
+                </div>
+                <div class="ppc-percents">
+                  <div class="pcc-percents-wrapper">
+                    <span>%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+               <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
+                 {% if project.is_active %}
+                 <li class="mt-25">
+                   <i class="fa fa-check text-success-m2 text-110 mr-2 mt-1 mb-2"></i>
+                   <span class="text-110">
+                     סטטוס: {{project.status}} 
+                 </span>
+                 </li>
+                 <li>
+                   <i class="fa fa-check text-success-m2 text-110 mr-2 mt-2"></i>
+                   <span>
+                     <span class="text-110">בתוקף עד: {{project.date_started|date:"d/m/Y"}}</span>
+                   </span>
+                 </li>
+                 <li class="mt-25">
+                   <i class="fa fa-check text-success-m2 text-110 mr-2"></i>
+                   <span class="text-110">
+                     תאריך סיום צפוי: {{project.est_finish|date:"d/m/Y"}}
+                 </span>
+                 </li>
+                 {% else %}
+                 <li class="mt-25">
+                   <i class="fa fa-times text-danger-m3 text-110 mr-25 mt-1"></i>
+                   <span class="text-110">
+                     סטטוס: לא פעיל 
+                 </span>
+                 </li>{% endif %}
+               </ul>
+               <div class="col-12 col-md-4 text-center">
+               <a href="{% url 'users:userpanel:project-detail' project.pk %}" style="color: #fff!important;" class="f-n- btn btn-success btn-raised px-4 py-25 w-75 text-600">ערוך פרויקט</a>
+               </div>
+             </div>
+           </div>
+         </div>
+     </div>
+   {% endfor %}
+    {% if project.is_active is not True %}
+   <div class="mt-4">
+     <small class="alert-danger">
+         שים לב, ישנם פרטים הדרושים עדכון בפרויקט.
+     </small></div>
+   {% endif %}
+  {% else %}
+  <h3>אין לך פרויקטים עדיין.</h3>
+  {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="pro-titlefix" style="margin-top: 100px;">ברו שובך {{request.user.first_name}}, רשימת הפרויקטים שלך: <a style="float: left; margin-left: 10%;"  href="{% url 'users:userpanel:newproject' %}" class="au-btn au-btn-icon au-btn--blue">
+  הוספת פרויקט <i class="zmdi zmdi-plus"></i></a></div>
+
+    {% if projects %}
+    {% for project in projects %}
+        <article>
+            <h3> {{ project.project_name }}</h3>
+            
+            
+            <p class="mt-5">  מספר מזהה: {{project.id}}
+             {{project.status}} - {{project.is_active}}  </p>
+             <div ><a class="btn btn-primary" href="{% url 'users:userpanel:project-detail' project.pk %}">ערוך</a></div>
+             </article>
+    {% endfor %}
+{% else %}
+    <p>אין לך תוספות פעילות אנא רכוש פה:</p>
+{% endif %} -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        var $ppc = $('.progress-pie-chart'),
+          percent = parseInt($ppc.data('percent')),
+          deg = 360*percent/100;
+        if (percent > 50) {
+          $ppc.addClass('gt-50');
+        }
+        $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+        $('.ppc-percents span').html(percent+'%');
+      });
+    </script>
+{% endblock %}

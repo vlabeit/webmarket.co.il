@@ -1,0 +1,287 @@
+/*
+* Responsive
+*/
+
+@media (max-width: 1920px) {
+    
+}
+
+@media (max-width: 1170px) {
+    .nav.nav-pills.tab-nav a { 
+        font-size: 13px; 
+    }
+    .left-pattern { 
+        left: -196px; 
+    }
+    .content-moc {
+        width: 93%;
+    }
+    .hero-2 .hero-moc {
+        background-size: 60%;
+        top: -57px;
+    }
+    .faq-shape {
+        left: -140px;
+    }
+}
+@media (max-width: 1024px) {
+    .faq-shape {
+        left: -150px;
+    }
+}
+
+/* ---- Start of max-width 992px CSS ---- */
+@media (max-width: 992px){
+    .sm-padding { 
+        padding: 15px; 
+    }
+    .padding.sm-pb-none { 
+        padding-bottom: 0;
+    }
+    .header-section .navbar-brand {
+        height: 80px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    .menu-btn,
+    .js #mainmenu { 
+        display: none;
+    }
+    .js .slicknav_menu { 
+        display:block;
+    }
+    .hero-moc {
+        right: -30px;
+        background-size: 54%;
+    }
+    .hero-2 .hero-moc {
+        top: -50px;
+    }
+    .hero-section.hero-3 {
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 530px;
+    }
+    .hero-3-bg-img{
+        background-color: #ffe9b9;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    .header-right .menu-btn {
+        margin-right: 50px;
+    }
+    .features-item h3 {
+        line-height: 26px;
+        font-size: 14px;
+    }
+    .content-moc {
+        width: 90%;
+    }
+    
+    .blue-shape,
+    .yellow-shape,
+    .download-content p br,
+    .content-info h2 br {
+        display: none;
+    }
+    .pricing-section .section-heading,
+    .cd-pricing-switcher {
+        text-align: center;
+    }
+    .dashboard-moc {
+        left: -80px;
+        -webkit-background-size: 70%;
+        background-size: 70%;
+    }
+    .clients-thumb .ct-thumb.thumb-4 {
+        left: 200px;
+    }
+    .faq-shape {
+        left: -260px;
+    }
+    .cta-content {
+        width: 100%;
+        padding: 65px;
+    }
+}
+/* ---- End of max-width 992px CSS ---- */
+
+
+/* ---- Start of min-width 480px and max-width 768px CSS ---- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+	
+}
+/* ---- End of min-width 480px and max-width 768px CSS ---- */
+
+
+/* ---- Start of max-width 767px CSS ---- */
+@media all and (max-width: 767px) {
+    body, 
+    p {
+        font-size: 13px;
+        line-height: 24px;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    h2 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    p br {
+        display: none;
+    }
+    .padding {
+        padding: 60px 0;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pt-80 {
+        padding-top: 60px;
+    }
+    .widget-section.widget-3 .widget-wrap {
+        padding-top: 60px;
+    }
+    .xs-padding {
+    	padding: 15px;
+    }
+    .bubble-effect {
+        display: none;
+    }
+    .section-heading h2 {
+        line-height: 35px;
+        font-size: 24px;
+    }
+    .page-header {
+        height: 250px;
+    }
+    .page-content h2 {
+        font-size: 24px;
+        line-height: 36px;
+        margin: 0;
+    }
+    .error-content { 
+        display: block;
+    }
+    .error-content .error-info {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    .error-content .error-info h2 {
+        font-size: 120px;
+        line-height: 120px;
+        margin-bottom: 30px;
+    }
+    .error-content .error-info a { 
+        display: block;
+    }
+    .contact-form .form-group .col-sm-6:first-child {
+        margin-bottom: 15px;
+    }
+    .contact-info h2 {
+        line-height: 28px;
+    }
+    .sidebar-wrap {
+        padding-left: 0;
+    }
+    .blog-single-content h2 a {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .blog-single-content h2 {
+        line-height: 28px;
+    }
+    blockquote p {
+        line-height: 32px;
+    }
+    .hero-moc {
+        display: none;
+    }
+    .right-pattern,
+    .left-pattern,
+    .content-moc {
+        display: none;
+    }
+    .footer-social,
+    .footer-wrap,
+    .footer-content,
+    .download-content { 
+        text-align: center!important;
+    }
+    .footer-item { 
+        margin: 10px 0;
+    }
+    .content-moc-1 {
+        background-size: 60%;
+        top: -130px;
+        left: 80px;
+    }
+    .hero-section.hero-3 { 
+        height: 500px;
+    }
+    .widget-section.widget-2 { 
+        border-radius: 90px 90px 0 0;
+    }
+    .widget-section.widget-3{
+        background-color: #fff4dc;
+        background-image: inherit;
+    }
+    .footer-2 .footer-social li {
+        margin: 0 5px;
+    }
+    #scroll-to-top {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+/* ---- End of max-width 767px CSS ---- */
+
+
+/* ---- Start of max-width 580px CSS ---- */
+@media all and (max-width: 580px) {
+    section {
+        overflow: hidden;
+    }
+    .pricing-section {
+        overflow: visible;
+    }
+    .subscribe-form { 
+        width: 100%;
+    }
+    .header-right .menu-btn {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0;
+    }
+}
+/* ---- End of max-width 580px CSS ---- */
+
+
+/* ---- Start of max-width 420px CSS ---- */
+@media all and (max-width: 420px) {
+    
+}
+/* ---- End of max-width 420px CSS ---- */
+
+
+/* ---- Start of max-width 380px CSS ---- */
+@media all and (max-width: 380px) {
+	
+}
+/* ---- End of max-width 380px CSS ---- */

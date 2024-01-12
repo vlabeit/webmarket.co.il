@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+	</head>
+	<style>
+		body{margin-top:-40px;}
+	  .mail-seccess {
+		  text-align: center;
+		  background: #fff;
+		  border-top: 1px solid #eee;
+	  }
+	  .mail-seccess .success-inner {
+		  display: inline-block;
+	  }
+	  .mail-seccess .success-inner h1 {
+		  font-size: 100px;
+		  text-shadow: 3px 5px 2px #3333;
+		  color: #006DFE;
+		  font-weight: 700;
+	  }
+	  .mail-seccess .success-inner h1 span {
+		  display: block;
+		  font-size: 25px;
+		  color: #333;
+		  font-weight: 600;
+		  text-shadow: none;
+		  margin-top: 20px;
+		  
+	  }
+	  
+	  .mail-seccess .success-inner .btn{
+		  font-size: 22px;
+	  }
+	  .mail-seccess .success-inner p {
+		  
+		  margin-top: -50px;
+	  }
+	  </style>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+		<section class="mail-seccess section">
+			<div class="container">
+				<div class="row">
+					<div>
+						<!-- Error Inner -->
+						<div class="success-inner">
+							<h1><i class="fa fa-envelope"></i><span>!האימייל נשלח בהצלחה</span></h1>
+							<p>אנא הכנס לתיבת הדואר הנכנס ואשר את האמייל ששלחנו לך.</p>
+							<button><a href="{% url 'settings' %}" target="_blank" rel="noopener noreferrer">חזור</a></button>
+						</div>
+						<!--/ End Error Inner -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="" async defer></script>
+	</body>
+</html>
+	

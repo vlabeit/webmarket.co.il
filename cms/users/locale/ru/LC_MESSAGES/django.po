@@ -1,0 +1,675 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# eb5b5ee62bf6428e621432b9e62de6b8_d17f633, 2014
+# Andrey <talkerbox@live.com>, 2016
+# Eugene <eugene.mechanism@gmail.com>, 2014-2016
+# Eugene <eugene.mechanism@gmail.com>, 2017
+# Никита Викторович <hnknta@gmail.com>, 2014
+# Mikhail Sidorov <pevzi23@gmail.com>, 2019
+# sergeybe <sergeybe@gmail.com>, 2020
+# Sergey Komarov <sjkomarov@gmail.com>, 2014
+# Tatsiana Tsygan <art.tatsiana@gmail.com>, 2018
+# Vassily <zuber.kg@gmail.com>, 2017
+# Влад <integration.into.society@gmail.com>, 2021
+# Мирон Левицкий <miron200504@gmail.com>, 2018
+# Михаил Герасимов, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Wagtail\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-23 19:53+0200\n"
+"PO-Revision-Date: 2021-10-15 16:44+0000\n"
+"Last-Translator: sergeybe <sergeybe@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/torchbox/wagtail/language/"
+"ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\cms\users\apps.py:8
+msgid "Wagtail users"
+msgstr "Пользователи Wagtail"
+
+#: .\cms\users\forms.py:42
+msgid "Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+"Обязательное. 30 символов или меньше. Только буквы, цифры и символы @/./+/-/"
+"_."
+
+#: .\cms\users\forms.py:46
+msgid "This value may contain only letters, numbers and @/./+/-/_ characters."
+msgstr "Это значение может содержать только буквы, цифры и символы @/./+/-/_"
+
+#: .\cms\users\forms.py:69
+msgid "A user with that username already exists."
+msgstr "Пользователь с таким именем уже существует. "
+
+#: .\cms\users\forms.py:70
+msgid "The two password fields didn't match."
+msgstr "Два поля с паролями не совпадают."
+
+#: .\cms\users\forms.py:73
+msgid "Email"
+msgstr "Адрес электронной почты"
+
+#: .\cms\users\forms.py:74
+msgid "First Name"
+msgstr "Имя"
+
+#: .\cms\users\forms.py:75
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\cms\users\forms.py:78
+msgid "Password"
+msgstr "Пароль"
+
+#: .\cms\users\forms.py:80
+msgid "Leave blank if not changing."
+msgstr "Оставьте пустым, если не изменяется."
+
+#: .\cms\users\forms.py:82
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\cms\users\forms.py:84
+msgid "Enter the same password as above, for verification."
+msgstr "Введите такой же пароль, как выше, для подтверждения."
+
+#: .\cms\users\forms.py:87 .\cms\users\forms.py:215
+msgid "Administrator"
+msgstr "Администратор"
+
+#: .\cms\users\forms.py:88 .\cms\users\forms.py:217
+msgid "Administrators have full access to manage any object or setting."
+msgstr ""
+"Администраторы имеют полный доступ для управления любыми объектами или "
+"настройками."
+
+#: .\cms\users\forms.py:211
+msgid "A group with that name already exists."
+msgstr "Группа с таким названием уже существует."
+
+#: .\cms\users\forms.py:315
+msgid "You cannot have multiple permission records for the same page."
+msgstr ""
+"Вы не можете иметь несколько записей с правами доступа для одной и той же "
+"страницы."
+
+#: .\cms\users\models.py:25
+msgid "submitted notifications"
+msgstr "уведомления при добавлении"
+
+#: .\cms\users\models.py:27
+msgid "Receive notification when a page is submitted for moderation"
+msgstr "Принимать уведомление при отправке страницы на модерацию."
+
+#: .\cms\users\models.py:31
+msgid "approved notifications"
+msgstr "уведомления при утверждении"
+
+#: .\cms\users\models.py:33
+msgid "Receive notification when your page edit is approved"
+msgstr "Принимать уведомление при одобрении вашей редакции страницы."
+
+#: .\cms\users\models.py:37
+msgid "rejected notifications"
+msgstr "уведомления при отклонении"
+
+#: .\cms\users\models.py:39
+msgid "Receive notification when your page edit is rejected"
+msgstr "Принимать уведомление при отклонении вашей редакции страницы."
+
+#: .\cms\users\models.py:43
+msgid "updated comments notifications"
+msgstr "обновленные уведомления о комментариях"
+
+#: .\cms\users\models.py:45
+msgid ""
+"Receive notification when comments have been created, resolved, or deleted "
+"on a page that you have subscribed to receive comment notifications on"
+msgstr ""
+"Получать уведомление, когда комментарии были созданы, закрыты или удалены на "
+"странице, на которую вы подписались"
+
+#: .\cms\users\models.py:49
+msgid "preferred language"
+msgstr "Предпочтительный язык"
+
+#: .\cms\users\models.py:51
+msgid "Select language for the admin"
+msgstr "Выберите язык администратора"
+
+#: .\cms\users\models.py:56
+msgid "current time zone"
+msgstr "текущий часовой пояс"
+
+#: .\cms\users\models.py:58
+msgid "Select your current time zone"
+msgstr "Выберите текущий часовой пояс"
+
+#: .\cms\users\models.py:63
+msgid "profile picture"
+msgstr "изображение профиля"
+
+#: .\cms\users\models.py:82
+msgid "user profile"
+msgstr "профиль пользователя"
+
+#: .\cms\users\models.py:83
+msgid "user profiles"
+msgstr "профили пользователя"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:4
+#, python-format
+msgid "Assign role to 1 user "
+msgid_plural "Assign role to %(counter)s users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:7
+#: .\cms\users\views\bulk_actions\assign_role.py:17
+msgid "Assign role"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to assign this role to these users?"
+msgstr "Вы уверены, что хотите удалить этого пользователя?"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:26
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:26
+msgid "You don't have permission to edit this user"
+msgid_plural "You don't have permission to edit these users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:33
+msgid "Yes, assign"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_assign_role.html:34
+#, fuzzy
+#| msgid "No, don't delete"
+msgid "No, don't assign"
+msgstr "Нет, не удалять"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:4
+#, fuzzy, python-format
+#| msgid "Delete user"
+msgid "Delete 1 user "
+msgid_plural "Delete %(counter)s users"
+msgstr[0] "Удалить пользователя"
+msgstr[1] "Удалить пользователя"
+msgstr[2] "Удалить пользователя"
+msgstr[3] "Удалить пользователя"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:7
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:19
+#: .\cms\users\templates\wagtailusers\groups\includes\page_permissions_form.html:13
+#: .\cms\users\views\bulk_actions\delete.py:9 .\cms\users\wagtail_hooks.py:130
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to delete these users?"
+msgstr "Вы уверены, что хотите удалить этого пользователя?"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:26
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "You don't have permission to delete this user"
+msgid_plural "You don't have permission to delete these users"
+msgstr[0] "Вы уверены, что хотите удалить этого пользователя?"
+msgstr[1] "Вы уверены, что хотите удалить этого пользователя?"
+msgstr[2] "Вы уверены, что хотите удалить этого пользователя?"
+msgstr[3] "Вы уверены, что хотите удалить этого пользователя?"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:33
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:26
+#: .\cms\users\templates\wagtailusers\users\confirm_delete.html:13
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_delete.html:34
+msgid "No, don't delete"
+msgstr "Нет, не удалять"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:4
+#, python-format
+msgid "Change active state for 1 user "
+msgid_plural "Change active state for %(counter)s users"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:7
+#: .\cms\users\views\bulk_actions\set_active_state.py:21
+msgid "Set active state"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:13
+#, fuzzy
+#| msgid "Are you sure you want to delete this user?"
+msgid "Are you sure you want to change the active state for these users?"
+msgstr "Вы уверены, что хотите удалить этого пользователя?"
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:29
+msgid "You cannot change your own active status"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:36
+msgid "Yes, change state"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\bulk_actions\confirm_bulk_set_active_state.html:37
+#, fuzzy
+#| msgid "No, don't delete"
+msgid "No, don't change state"
+msgstr "Нет, не удалять"
+
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:3
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:6
+#: .\cms\users\templates\wagtailusers\groups\edit.html:43
+#: .\cms\users\views\groups.py:115 .\cms\users\views\groups.py:152
+msgid "Delete group"
+msgstr "Удалить группу"
+
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:11
+#, python-format
+msgid ""
+"\n"
+"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
+"strong> member.\n"
+"            "
+msgid_plural ""
+"\n"
+"                The group '%(group_name)s' has <strong>%(group_user_count)s</"
+"strong> members.\n"
+"            "
+msgstr[0] ""
+"\n"
+"                В группе '%(group_name)s' состоит <strong>"
+"%(group_user_count)s</strong> пользователь.\n"
+"            "
+msgstr[1] ""
+"\n"
+"                В группе '%(group_name)s' состоит <strong>"
+"%(group_user_count)s</strong> пользователей.\n"
+"            "
+msgstr[2] ""
+"\n"
+"                В группе '%(group_name)s' состоит <strong>"
+"%(group_user_count)s</strong> пользователей.\n"
+"            "
+msgstr[3] ""
+"\n"
+"                В группе '%(group_name)s' состоит <strong>"
+"%(group_user_count)s</strong> пользователей.\n"
+"            "
+
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:19
+msgid ""
+"Deleting this group will revoke this group's permissions from all member "
+"users."
+msgstr ""
+"Удаление этой группы приведет к удалению прав, которые она давала всем ее "
+"участникам."
+
+#: .\cms\users\templates\wagtailusers\groups\confirm_delete.html:23
+#: .\cms\users\views\groups.py:153
+msgid "Are you sure you want to delete this group?"
+msgstr "Вы уверены что хотите удалить эту группу?"
+
+#: .\cms\users\templates\wagtailusers\groups\create.html:4
+#: .\cms\users\templates\wagtailusers\groups\create.html:15
+#: .\cms\users\templates\wagtailusers\groups\create.html:35
+#: .\cms\users\views\groups.py:76
+msgid "Add group"
+msgstr "Добавить группу"
+
+#: .\cms\users\templates\wagtailusers\groups\edit.html:4
+#: .\cms\users\templates\wagtailusers\groups\edit.html:15
+#: .\cms\users\templates\wagtailusers\users\edit.html:4
+#: .\cms\users\templates\wagtailusers\users\edit.html:7
+msgid "Editing"
+msgstr "Редактирование"
+
+#: .\cms\users\templates\wagtailusers\groups\edit.html:16
+msgid "View users in this group"
+msgstr "Просмотр пользователей группы"
+
+#: .\cms\users\templates\wagtailusers\groups\edit.html:40
+#: .\cms\users\templates\wagtailusers\users\edit.html:41
+#: .\cms\users\templates\wagtailusers\users\edit.html:56
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:4
+msgid "Permissions"
+msgstr "Разрешения"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:5
+msgid "Object permissions"
+msgstr "Разрешения объекта"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:16
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:73
+#: .\cms\users\templates\wagtailusers\users\list.html:9
+#: .\cms\users\templates\wagtailusers\users\list.html:13
+#: .\cms\users\views\groups.py:65
+msgid "Name"
+msgstr "Имя"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:17
+msgid "Add"
+msgstr "Добавить"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:18
+msgid "Change"
+msgstr "Изменить"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:21
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:51
+#, fuzzy
+#| msgid "Other permissions"
+msgid "Custom permissions"
+msgstr "Другие разрешения"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\formatted_permissions.html:67
+msgid "Other permissions"
+msgstr "Другие разрешения"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:2
+msgid "Page permissions"
+msgstr "Права на страницы"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:22
+msgid "Page"
+msgstr "Страница"
+
+#: .\cms\users\templates\wagtailusers\groups\includes\page_permissions_formset.html:54
+msgid "Add a page permission"
+msgstr "Добавить права на страницу"
+
+#: .\cms\users\templates\wagtailusers\groups\index.html:3
+#: .\cms\users\templates\wagtailusers\groups\index.html:16
+msgid "groups"
+msgstr "группы"
+
+#: .\cms\users\templates\wagtailusers\groups\index.html:17
+#: .\cms\users\views\groups.py:56
+msgid "Add a group"
+msgstr "Добавить группу"
+
+#: .\cms\users\templates\wagtailusers\groups\results.html:8
+#, python-format
+msgid "Sorry, no groups match \"%(query)s\""
+msgstr "Извините, подходящих групп не найдено \"%(query)s\""
+
+#: .\cms\users\templates\wagtailusers\groups\results.html:11
+#, python-format
+msgid ""
+"There are no groups configured. Why not <a href="
+"\"%(wagtailusers_create_group_url)s\">add some</a>?"
+msgstr ""
+"Группы еще не созданы. Почему бы не <a href="
+"\"%(wagtailusers_create_group_url)s\">добавить</a>?"
+
+#: .\cms\users\templates\wagtailusers\users\confirm_delete.html:3
+#: .\cms\users\templates\wagtailusers\users\confirm_delete.html:6
+#: .\cms\users\templates\wagtailusers\users\edit.html:43
+#: .\cms\users\templates\wagtailusers\users\edit.html:58
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#: .\cms\users\templates\wagtailusers\users\confirm_delete.html:10
+msgid "Are you sure you want to delete this user?"
+msgstr "Вы уверены, что хотите удалить этого пользователя?"
+
+#: .\cms\users\templates\wagtailusers\users\create.html:4
+#: .\cms\users\templates\wagtailusers\users\create.html:7
+#: .\cms\users\templates\wagtailusers\users\create.html:43
+msgid "Add user"
+msgstr "Добавить пользователя"
+
+#: .\cms\users\templates\wagtailusers\users\create.html:11
+#: .\cms\users\templates\wagtailusers\users\edit.html:11
+msgid "Account"
+msgstr "Аккаунт"
+
+#: .\cms\users\templates\wagtailusers\users\create.html:12
+#: .\cms\users\templates\wagtailusers\users\create.html:36
+#: .\cms\users\templates\wagtailusers\users\edit.html:12
+msgid "Roles"
+msgstr "Роли"
+
+#: .\cms\users\templates\wagtailusers\users\index.html:3
+#: .\cms\users\templates\wagtailusers\users\index.html:24
+#: .\cms\users\wagtail_hooks.py:70 .\cms\users\wagtail_hooks.py:120
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\cms\users\templates\wagtailusers\users\index.html:25
+msgid "Add a user"
+msgstr "Добавить пользователя"
+
+#: .\cms\users\templates\wagtailusers\users\index.html:34
+msgid "Select all users in listing"
+msgstr ""
+
+#: .\cms\users\templates\wagtailusers\users\list.html:20
+#: .\cms\users\templates\wagtailusers\users\list.html:24
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:28
+msgid "Level"
+msgstr "Уровень"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:29
+msgid "Status"
+msgstr "Статус"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:30
+msgid "Last Login"
+msgstr "Последний вход"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:47
+msgid "Admin"
+msgstr "Администратор"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:48
+#: .\cms\users\views\bulk_actions\set_active_state.py:12
+msgid "Active"
+msgstr "Активный"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:48
+#: .\cms\users\views\bulk_actions\set_active_state.py:13
+msgid "Inactive"
+msgstr "Неактивный"
+
+#: .\cms\users\templates\wagtailusers\users\list.html:49
+#, python-format
+msgid "%(time_period)s ago"
+msgstr "%(time_period)s назад"
+
+#: .\cms\users\templates\wagtailusers\users\results.html:5
+#, python-format
+msgid ""
+"\n"
+"            There is %(counter)s match\n"
+"        "
+msgid_plural ""
+"\n"
+"            There are %(counter)s matches\n"
+"        "
+msgstr[0] ""
+"\n"
+"Найдено %(counter)s совпадение"
+msgstr[1] ""
+"\n"
+"Найдено %(counter)s совпадений"
+msgstr[2] ""
+"\n"
+"Найдено %(counter)s совпадений"
+msgstr[3] ""
+"\n"
+"Найдено %(counter)s совпадений"
+
+#: .\cms\users\templates\wagtailusers\users\results.html:21
+#, python-format
+msgid "Sorry, no users match \"<em>%(query_string)s</em>\""
+msgstr ""
+"Извините, не найдены пользователи удовлетворяющие условию \"<em>"
+"%(query_string)s</em>\""
+
+#: .\cms\users\templates\wagtailusers\users\results.html:28
+#, python-format
+msgid ""
+"The %(group_name)s group has no users configured. Why not <a href="
+"\"%(wagtailusers_add_url)s\">add some</a>?"
+msgstr ""
+"Группа %(group_name)s не содержит пользователей. Вы можете <a href="
+"\"%(wagtailusers_add_url)s\">добавить пользователей</a>."
+
+#: .\cms\users\templates\wagtailusers\users\results.html:31
+#, python-format
+msgid ""
+"There are no users configured. Why not <a href=\"%(wagtailusers_add_url)s"
+"\">add some</a>?"
+msgstr ""
+"Пользователи не сконфигурированы. <a href=\"%(wagtailusers_add_url)s"
+"\">Добавить пользователя</a>."
+
+#: .\cms\users\views\bulk_actions\assign_role.py:19
+msgid "Assign role to selected users"
+msgstr ""
+
+#: .\cms\users\views\bulk_actions\assign_role.py:42
+#, python-format
+msgid "%(num_parent_objects)d user has been assigned as %(role)s"
+msgid_plural "%(num_parent_objects)d users have been assigned as %(role)s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\views\bulk_actions\delete.py:11
+#, fuzzy
+#| msgid "Delete this user"
+msgid "Delete selected users"
+msgstr "Удалить этого пользователя"
+
+#: .\cms\users\views\bulk_actions\delete.py:34
+#, python-format
+msgid "%(num_parent_objects)d user has been deleted"
+msgid_plural "%(num_parent_objects)d users have been deleted"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\views\bulk_actions\set_active_state.py:23
+msgid "Change the active state for selected users"
+msgstr ""
+
+#: .\cms\users\views\bulk_actions\set_active_state.py:59
+#, python-format
+msgid "%(num_parent_objects)d user has been marked as active"
+msgid_plural "%(num_parent_objects)d users have been marked as active"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\views\bulk_actions\set_active_state.py:67
+#, python-format
+msgid "%(num_parent_objects)d user has been marked as inactive"
+msgid_plural "%(num_parent_objects)d users have been marked as inactive"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\cms\users\views\groups.py:55 .\cms\users\wagtail_hooks.py:89
+msgid "Groups"
+msgstr "Группы"
+
+#: .\cms\users\views\groups.py:57
+msgid "Search groups"
+msgstr "Поиск групп"
+
+#: .\cms\users\views\groups.py:77
+#, python-brace-format
+msgid "Group '{0}' created."
+msgstr "Группа '{0}' создана."
+
+#: .\cms\users\views\groups.py:113
+#, python-brace-format
+msgid "Group '{0}' updated."
+msgstr "Группа '{0}' обновлена."
+
+#: .\cms\users\views\groups.py:114
+msgid "The group could not be saved due to errors."
+msgstr "Группа не может быть сохранена из-за ошибок."
+
+#: .\cms\users\views\groups.py:151
+#, python-brace-format
+msgid "Group '{0}' deleted."
+msgstr "Группа '{0}' удалена."
+
+#: .\cms\users\views\users.py:85 .\cms\users\views\users.py:93
+msgid "Search users"
+msgstr "Поиск пользователей"
+
+#: .\cms\users\views\users.py:144
+#, python-brace-format
+msgid "User '{0}' created."
+msgstr "Пользователь '{0}' создан."
+
+#: .\cms\users\views\users.py:145 .\cms\users\views\users.py:184
+#: .\cms\users\wagtail_hooks.py:128
+msgid "Edit"
+msgstr "Править"
+
+#: .\cms\users\views\users.py:153
+msgid "The user could not be created due to errors."
+msgstr "Пользователь не может быть создан из-за ошибок."
+
+#: .\cms\users\views\users.py:183
+#, python-brace-format
+msgid "User '{0}' updated."
+msgstr "Пользователь '{0}' обновлен."
+
+#: .\cms\users\views\users.py:192
+msgid "The user could not be saved due to errors."
+msgstr "Пользователь но может быть сохранен из-за ошибок."
+
+#: .\cms\users\views\users.py:218
+#, python-brace-format
+msgid "User '{0}' deleted."
+msgstr "Пользователь '{0}' удалён."
+
+#: .\cms\users\wagtail_hooks.py:128
+msgid "Edit this user"
+msgstr "Редактировать этого пользователя"
+
+#: .\cms\users\wagtail_hooks.py:130
+msgid "Delete this user"
+msgstr "Удалить этого пользователя"

@@ -1,0 +1,71 @@
+{% load static %}
+{% block navb %}
+
+<nav class="nav">
+  <div class="container">
+    <h1 class="logos"><span>Market</span><span>Web</span></h1>
+      <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            <li><a href="{% url 'main:index' %}">בית</a></li>
+            <li><a href="{% url 'main:services' %}">שירותים</a></li>
+            <li><a href="{% url 'catalogue:index' %}">חנות</a></li>
+            <li><a href="{% url 'wagtail_serve' home %}">בלוג</a></li>
+            <li><a href="{% url 'main:contact' %}">יצירת קשר</a></li>
+              <div class="dropdown2">
+                <li><a href="#">אודותינו</a>
+                  <i class="fa fa-caret-down"></i>
+                </li>
+                <div class="dropdown2-content">
+                  <a href="{% url 'main:aboutus' %}">על החברה</a>
+                  <a href="{% url 'main:faq' %}">שאלות נפוצות</a>
+                  <a href="{% url 'main:support-price' %}">מחירון תמיכה</a>
+                </div>
+              </div>
+              {% if request.user.is_authenticated %} 
+                <a href="{% url 'users:userpanel:index' %}" ><button class="bn632-hover bn26 mr-2 mt-3"><i style="margin-left: 5px;" class="fas fa-user-circle"></i>איזור אישי</button></a>
+              {% else %}
+                <a href="{% url 'users:login' %}"><button class="bn632-hover bn26 mr-2 mt-3"><i style="margin-left: 5px;" class="fas fa-sign-in-alt"></i>התחבר</button></a>
+              {% endif %}  
+          </ul>
+      </div>
+
+        
+        
+        
+      <span class="navTrigger">
+          <i></i>
+          <i></i>
+          <i></i>
+      </span>
+  </div>
+</nav>
+
+
+<!-- Jquery needed -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+<script>
+  $(window).scroll(function() {
+      if ($(document).scrollTop() > 50) {
+          $('.nav').addClass('sectionbg2');
+          console.log("OK");
+      } else {
+          $('.nav').removeClass('sectionbg2');
+      }
+  });
+
+  /* ==========================================================================
+   new nav
+   ========================================================================== */
+
+$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+</script>
+
+{% endblock navb %}

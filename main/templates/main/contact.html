@@ -1,0 +1,74 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+        <section class="contact-section padding">
+            {% include 'main/slider_contact.html' %}
+		    <div class="container">
+		        <div class="contact-wrap d-flex align-items-center row mt-5">
+                    <div class="col-lg-6 sm-padding">
+		                <div class="contact-info">
+		                    <h2>צור איתנו קשר!</h2>
+		                    <p>ואנו נחזור אליך בהקדם האפשרי (לרוב תוך כמה שעות).</p>
+		                    <h4><span>Email:</span> <a href="mailto:info@webmarket.co.il"> info@webmarket.co.il</a> <br> <span>Phone:</span><a href="tel:0585559595"> 0585559595</a></h4>
+		                </div>
+		            </div>
+		            <div class="col-lg-6 sm-padding">
+		                <div class="contact-form">
+                            <form method="POST" class="form-horizontal">
+                                {% csrf_token %}
+
+                                {% if form.errors %}
+                                {% for field in form.errors %}
+                                    <div class="alert-danger" style="display: inline;"> {{form.errors}}</div>                                                
+                                {% endfor %}
+                                {% endif %}
+
+                                <div class="form-group colum-row row">
+                                    <div class="col-sm-6">
+                                        {% render_field form.name id="name" name="name" class="form-control" placeholder="שם"%}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {% render_field form.phone id="phone" name="phone" class="form-control" placeholder="טלפון"%}
+                                    </div>
+                                    <div class="mt-3">
+                                        {% render_field form.email id="email" name="email is-invalid" class="form-control" placeholder="כתובת מייל" required=False %}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12 mt-3">
+                                        {% render_field form.title id="title" name="title" cols="30" rows="5" class="form-control message" placeholder="כותרת"%}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12 mt-3">
+                                        {% render_field form.message id="message" name="message" cols="30" rows="5" class="form-control message" placeholder="הודעה"%}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <button id="submit" class="default-btn btn-blue mt-4" type="submit">שלח הודעה</button>
+                                    </div>
+                                </div>
+                                <div id="form-messages" class="alert" role="alert"></div>
+                            </form>
+                        </div>
+		            </div>
+		        </div>
+		    </div>
+		</section><!--/. contact-section -->
+
+		<a data-scroll href="#header" id="scroll-to-top"><i class="ti-arrow-up"></i></a>
+	
+        <script>
+        window.onload=myfunction();
+        function myfunction()
+       {
+           $("render_field").removeAttr("required");
+       
+       }
+    </script>
+    </body>
+    {% endblock %}

@@ -1,0 +1,451 @@
+{% load static %}
+<style>
+    
+    .card {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+        }
+
+
+        .card-header {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 1.3rem;
+            background-color: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        }
+
+        .track {
+            position: relative;
+            background-color: #ddd;
+            height: 7px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 60px;
+            margin-top: 50px;
+        }
+
+        .track .step {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            width: 25%;
+            margin-top: -18px;
+            text-align: center;
+            position: relative
+        }
+
+        .track .step.active.accepted:before {
+            background-image: linear-gradient(to right,
+                    #f04d4d,
+                    #dd4444,
+                    #c91313,
+                    #eb0000);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+
+        .track .step.active.work:before {
+            background-image: linear-gradient(to right,
+                    #ffc271,
+                    #ff9811);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+
+        .track .step.active.waiting:before {
+            background-image: linear-gradient(to right,
+                    #fff020,
+                    #fbff20,
+                    #e5fe04,
+                    #e1ed3f);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+
+        .track .step.active.review:before {
+            background-image: linear-gradient(to right,
+                    #25aae1,
+                    #4481eb,
+                    #04befe,
+                    #3f86ed);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+
+        .track .step.active.complete:before {
+            background-image: linear-gradient(to right,
+                    #25e13e,
+                    #73eb44,
+                    #21fe04,
+                    #68ed3f);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        }
+
+        .track .step::before {
+            height: 7px;
+            position: absolute;
+            content: "";
+            width: 100%;
+            left: 0;
+            top: 18px
+        }
+
+        .track .step.active .icon.accepted {
+            background-image: linear-gradient(to right,
+                    #f04d4d,
+                    #dd4444,
+                    #c91313,
+                    #eb0000);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+
+        }
+
+        .track .step.active .icon.work {
+            background: #21fe04;
+            background-image: linear-gradient(to right,
+                    #ffc271,
+                    #ff9811);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+
+        }
+
+        .track .step.active .icon.waiting {
+            background-image: linear-gradient(to right,
+                    #fff020,
+                    #fbff20,
+                    #e5fe04,
+                    #e1ed3f);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+
+        }
+
+        .track .step.active .icon.review {
+            background-image: linear-gradient(to right,
+                    #25aae1,
+                    #4481eb,
+                    #04befe,
+                    #3f86ed);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+
+        }
+
+        .track .step.active .icon.complete {
+            background-image: linear-gradient(to right,
+                    #25e13e,
+                    #73eb44,
+                    #21fe04,
+                    #68ed3f);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+
+        }
+
+        .track .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            border-radius: 100%;
+            background: #ddd
+        }
+
+        .track .step.active .text {
+            font-weight: 400;
+            color: #000
+        }
+
+        .track .text {
+            display: block;
+            margin-top: 7px
+        }
+
+        .itemside {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%
+        }
+
+        .itemside .aside {
+            position: relative;
+            -ms-flex-negative: 0;
+            flex-shrink: 0
+        }
+
+        .img-sm {
+            width: 80px;
+            height: 80px;
+            padding: 7px
+        }
+
+        ul.row,
+        ul.row-sm {
+            list-style: none;
+            padding: 0
+        }
+
+        .itemside .info {
+            padding-left: 15px;
+            padding-right: 7px
+        }
+
+        .itemside .title {
+            display: block;
+            margin-bottom: 5px;
+            color: #212529
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        .btn-warning {
+            color: #ffffff;
+            background-color: #ee5435;
+            border-color: #ee5435;
+            border-radius: 1px
+        }
+
+        .btn-warning:hover {
+            color: #ffffff;
+            background-color: #ff2b00;
+            border-color: #ff2b00;
+            border-radius: 1px
+        }
+
+        /************ progress bar *****************/
+
+        div.meter {
+            position: relative;
+            width: 85%;
+            height: 35px;
+            border: 1px solid #b0b0b0;
+            margin-top: 10px;
+            /* viewing purposes */
+
+            /* viewing purposes */
+            -webkit-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+            -moz-box-shadow: inset 0 3px 5px 0 #d3d0d0;
+            box-shadow: inset 0 3px 5px 0 #d3d0d0;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 5px;
+            justify-content: center;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 20px;
+        }
+
+        div.meter span {
+            display: block;
+            height: 100%;
+            animation: grower 1s linear;
+            -moz-animation: grower 1s linear;
+            -webkit-animation: grower 1s linear;
+            -o-animation: grower 1s linear;
+            position: relative;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+            border: 1px solid #2baffb;
+            background-image: linear-gradient(to right,
+                    #25aae1,
+                    #4481eb,
+                    #04befe,
+                    #3f86ed);
+            box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+            -webkit-background-size: 45px 45px;
+            -moz-background-size: 45px 45px;
+            -o-background-size: 45px 45px;
+            background-size: 45px 45px;
+        }
+
+        div.meter span:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 50%;
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        div.meter span {
+            color: #ffffff;
+            justify-content: left;
+        }
+
+        div.meter p {
+            position: absolute;
+            top: 0;
+            margin: 0 10px;
+            line-height: 25px;
+            font-family: 'Helvetica';
+            font-weight: bold;
+            -webkit-font-smoothing: antialised;
+            font-size: 15px;
+            color: #333;
+            text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes grower {
+            0% {
+                width: 0%;
+            }
+        }
+
+        @-moz-keyframes grower {
+            0% {
+                width: 0%;
+            }
+        }
+
+        @-webkit-keyframes grower {
+            0% {
+                width: 0%;
+            }
+        }
+
+        @-o-keyframes grower {
+            0% {
+                width: 0%;
+            }
+        }
+
+        a {
+            all: unset;
+            }
+</style>  
+
+
+
+
+    <div class="row" style="margin-top: 10%; margin-right: 10%;">
+        <div class="col-xs-10 col-sm-7">
+                <article class="card"  style="border-radius: 15px;">
+                    <div class="card-body">
+                        <div class="col"> <strong>שם פרויקט:</strong> {{projects.project_name}} </div>
+                        <div class="col"> <strong>מס מזהה #:</strong> {{projects.id}}</div>
+                        {% if projects.est_finish %}
+                        <div class="col"> <strong>זמן סיום מוערך:</strong> {{projects.est_finish|date:"d/m/Y"}} </div>
+                        {% else %}
+                        <div class="col"> <strong>זמן סיום מוערך:</strong> <i><em>יקבע לאחר סיום איפיון האתר</em></i></div>
+                        {% endif %}
+                    </div>
+                <div class="meter">
+                    <span style="width: {{projects.project_percent}}%"></span>{{projects.project_percent}}%
+                </div>
+                <div class="track">
+    
+    
+    
+    
+                    {% for status in proj_cats %}
+    
+                    {% if status == projects.status and status == 'accepted' %}
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-check"></i> </span>
+                        <span class="text">התקבל</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">
+                            בעבודה</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">ממתין
+                            לתוכן</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">שלב
+                            תיקונים</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">הושלם</span>
+                    </div>
+                    {% elif status == projects.status and status == 'work' %}
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-check"></i> </span>
+                        <span class="text">התקבל</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-user"></i> </span>
+                        <span class="text"> בעבודה</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">ממתין
+                            לתוכן</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">שלב
+                            תיקונים</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">הושלם</span>
+                    </div>
+                    {% elif status == projects.status and status == 'waiting' %}
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-check"></i> </span>
+                        <span class="text">התקבל</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-user"></i> </span>
+                        <span class="text">בעבודה</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">ממתין לתוכן</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">שלב
+                            תיקונים</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">הושלם</span>
+                    </div>
+                    {% elif status == projects.status and status == 'review' %}
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-check"></i> </span>
+                        <span class="text">התקבל</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-user"></i> </span>
+                        <span class="text">בעבודה</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">ממתין לתוכן</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">שלב תיקונים</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">הושלם</span>
+                    </div>
+                    {% elif status == projects.status and status == 'complete' %}
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-check"></i> </span>
+                        <span class="text">התקבל</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-user"></i> </span>
+                        <span class="text">בעבודה</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">ממתין לתוכן</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">שלב תיקונים</span> </div>
+                    <div class="step active {{status}}"> <span class="icon {{status}}"> <i class="fa fa-box"></i> </span>
+                        <span class="text">הושלם</span> </div>
+    
+                    {% endif %}
+                    {% endfor %}
+    
+                </div>
+        </div>
+    
+    
+        <div class="col-xs-10 col-sm-3"> 
+            
+            {% if projects.status == 'accepted' %}
+            <div style=" text-align: center; justify-content: center;"><img style="width: 300px;"
+                    src="{% static 'img/confirmed-animate.svg' %}" alt="My Happy SVG" /></div>
+            {% elif projects.status == 'work' %}
+            <div style=" text-align: center; justify-content: center;"><img style="width: 300px;"
+                    src="{% static 'img/work-animate.svg' %}" alt="My Happy SVG" /></div>
+            {% elif projects.status == 'waiting' %}
+            <div style=" text-align: center; justify-content: center;"><img style="width: 300px;"
+                    src="{% static 'img/content-animate.svg' %}" alt="My Happy SVG" /></div>
+            {% elif projects.status == 'review' %}
+            <div style=" text-align: center; justify-content: center;"><img style="width: 300px;"
+                    src="{% static 'img/review-animate.svg' %}" alt="My Happy SVG" /></div>
+            {% elif projects.status == 'complete' %}
+            <div style=" text-align: center; justify-content: center;"><img style="width: 300px;"
+                    src="{% static 'img/completed-animate.svg' %}" alt="My Happy SVG" /></div>
+            {% endif %}
+    
+            </div>
+        </div>
+
+        <script type='text/javascript'>
+            document.addEventListener('DOMContentLoaded', function () {
+                window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000);
+            })
+        </script>

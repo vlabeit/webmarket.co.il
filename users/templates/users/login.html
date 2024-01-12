@@ -1,0 +1,91 @@
+{% extends 'users/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+
+        <div class="col-lg-6">
+            <div class="card2 card border-0 px-4 py-5">
+                <div class="row mb-4 px-3">
+                    <h6 class="mb-3 mr-4 mt-2">התחבר עם</h6>
+                    
+                    <div class="row">
+                        <a href="{% provider_login_url "google" %}" class="me-3 columnlogin btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google"></i> Google</a></hr>
+                     
+                          <a href="{% provider_login_url "facebook" method="oauth2" %}" class="columnlogin btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook</a>  
+                      </div>
+                </div>
+                <div class="row px-3 mb-4">
+                    <div class="line"></div> <small class="or text-center">או</small>
+                    <div class="line"></div>
+                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success mb-2 mt-3" role="alert"> {{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">אימייל</h6>
+                    </label> {% render_field form.username class="form-control mb-2" style="text-align: right;" id="inputEmail" type="email" placeholder="הזן אימייל" style="border-radius:20px;" autofocus="autofocus" %}
+                </div>
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">סיסמא <input style="position:absolute; margin-right: -45%;" type="checkbox" id="box" onclick ="reveal()"> <small style="margin-right: 65px;"> הצג סיסמא </small> <span class="fas fa-eye-slash"></input></h6>
+                    </label> {% render_field form.password class="form-control" id="pwd" type="password" placeholder="הזן סיסמא" style="border-radius:20px;" %}</div>
+           
+                        
+                                                        
+                <div class="row px-3 mb-4">
+                    <div class="custom-control custom-checkbox custom-control-inline"> 
+                        {% if form.errors %}
+                            <p class="alert alert-danger alert-dismissible show mt-2" style="max-width: 94%;">שם המשתמש או הסיסמא שלכם לא נכונים, אנא נסו שנית.</p>
+                        {% endif %}
+                        <div class="container mt-5">
+                            {% if form.captcha.errors %}
+                            {% for field in form.captcha %}
+                                <div class="alert-danger" style="display: inline;"> {{form.errors.captcha}}</div>                                                
+                            {% endfor %}
+                            {% endif %}
+                            {{ form.captcha }}
+                        </div>
+                    <a href="{% url 'users:password_reset' %}" class="ml-auto mb-0 text-sm">שכחת סיסמא??</a>
+                </div>
+                <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center mt-4" style="border-radius: 10px;">התחבר</button> </div>
+            </form>
+                <div class="row mb-4 px-3"> <small class="font-weight-bold">אין לך חשבון? <a class="text-danger" href="{% url 'users:register' %}">הרשם</a></small> </div>
+            </div>
+        </div>    
+    </div>
+    <script>
+        function showPassword() {
+        var password = document.getElementById('pwd');
+        if (password.type === 'password') {
+        password.type = "text";
+        }
+        else {
+        password.type = "password";
+        }
+        }
+    </script>
+
+    <script>
+        function reveal()
+        {
+        if(document.getElementById('box').checked)
+           {document.getElementById("pwd").type='text';}
+        else
+        document.getElementById("pwd").type='password';
+        }
+        </script>   
+        
+{% endblock %}
+{% block header %}
+{% include 'users/header.html' %}
+{% endblock %}
+{% block ufooter %}
+{% endblock %}
+
+</html>

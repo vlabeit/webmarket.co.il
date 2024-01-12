@@ -1,0 +1,102 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+{% block main %}
+<style>
+  body{
+    margin-top:20px;
+    background:#f5f7fa;
+}
+.panel.panel-default {
+    border-top-width: 3px;
+}
+.panel {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
+    border: 0;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.thumb96 {
+    width: 96px!important;
+    height: 96px!important;
+}
+
+</style>
+
+<div style="margin-top: 10%;">
+
+  <div class="container bootstrap snippets bootdey">
+    <div class="row ng-scope">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    <div class="pv-lg"><img class="center-block img-responsive img-circle img-thumbnail thumb96" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Contact"></div>
+                    <h3 class="m0 text-bold">{{object.plan_name}}</h3>
+                    <div class="mv-lg">
+                        <p>סיכום התוכנית</p>
+                    </div>
+                    <div style="padding-bottom: 20px;" class="text-center mt-3"><a class="btn btn-primary" href="{% url 'users:userpanel:support-change' %}">שינוי תוכנית</a></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                    <div class="h4 text-center">פרטי המינוי</div>
+                    <div class="row pv-lg">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <div class="form-horizontal ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact1">סוג התוכנית</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact1" type="text" readonly value="{{object.type}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact2">מחיר</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact2" readonly value="{{object.price}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact3">תקופה</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact3" readonly value="{{object.period}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact4">תאריך התחלה</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact4" readonly type="text" value="{{object.start_time|date:"d/m/Y"}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact5">תאריך סיום</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="inputContact5" readonly type="text" value="{{object.end_time|date:"d/m/Y"}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="inputContact6">תשלום הבא</label>
+                                    <div class="col-sm-10">
+                                       <input class="form-control" id="inputContact5" readonly type="text" value="{{object.next_payment|date:"d/m/Y"}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10 mt-3">
+                                        <button class="btn btn-info" type="submit">חזור</button>
+                                    </div>
+                                </div>
+                              </div>
+                            <div class="text-right mt-3"><a class="text-muted" href="#">הפסקת מינוי</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

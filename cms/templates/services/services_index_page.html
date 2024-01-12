@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags navigation_tags wagtailimages_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ page.title }}</h1>
+                <p>{{ page.introduction}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row bread-list">
+        {% for service in services %}
+            <a href="{% pageurl service %}" class="col-xs-12 col-md-6 bread-list-item">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 image">
+                        {% image service.image fill-180x180-c100 as image %}
+                        <img src="{{ image.url }}" width="{{ image.width }}"
+                            height="{{ image.height }}" alt="{{ image.alt }}" class="" />
+                    </div>
+                    <div class="col-xs-6 col-sm-7">
+                        <h2>{{ service.title }}</h2>
+                        <ul class="bread-meta">
+                        {% if service.origin %}
+                            <li><span>Origin</span> {{ service.origin }}</li>
+                        {% endif %}
+                        {% if service.service_type %}
+                            <li><span>Type</span> {{ service.service_type }}</li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+
+    {% if services.paginator.count > 1 %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                {% include "includes/pagination.html" with subpages=services %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

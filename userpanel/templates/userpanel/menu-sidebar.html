@@ -1,0 +1,19 @@
+ {% load static %}
+
+ <!-- MENU SIDEBAR-->
+ <aside class="menu-sidebar d-none d-lg-block" style="box-shadow:0 0 15px 4px rgba(0,0,0,0.06); background: linear-gradient(to bottom, #DBEEFF, #FFFFFF);">
+    <div class="logo">
+        <a href="{% url 'users:userpanel:index' %}">
+            <h1 class="logos"><span>Market</span><span>Web</span></h1>
+            {% comment %} <img src="{% static 'img/icons/logo.png' %}" alt="Webmarket dashboard logo" /> {% endcomment %}
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar" >
+            <ul class="list-unstyled navbar__list">
+                {% include 'userpanel/menu.html' %}
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!-- END MENU SIDEBAR-->

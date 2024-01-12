@@ -1,0 +1,47 @@
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html class="no-js" lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+
+{% block head %}
+{% include 'userpanel/base-head.html' %}
+{% endblock head %}
+
+<body class="animsition">
+    <div>
+
+        {% block headerdesk %}{% include 'userpanel/menu-mobile.html' %}{% endblock headerdesk %}
+        
+        {% block sidebar %}{% include 'userpanel/menu-sidebar.html' %}{% endblock sidebar %}
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            
+            {% block headermobile %}{% include 'userpanel/header-desktop.html' %}{% endblock headermobile %}  
+
+            {% block main %}{% endblock main %} 
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'userpanel/vendor/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{% static 'userpanel/vendor/bootstrap-4.1/popper.min.js' %}"></script>
+    <script src="{% static 'userpanel/vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+    <!-- Vendor JS       -->
+    <script src="{% static 'userpanel/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'userpanel/vendor/animsition/animsition.min.js' %}"></script>
+    <script src="{% static 'userpanel/vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <!-- Main JS-->
+    <script src="{% static 'userpanel/js/main_userpanel.js' %}"></script>
+</body>
+
+</html>
+<!-- end document-->

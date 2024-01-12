@@ -1,0 +1,83 @@
+{% load static %}
+{% block footer %}
+
+<footer>
+	<div class="footer-top">
+
+
+		<div class="col-md-8 offset-md-2">
+			<div class="social-linkb">
+				<a class="social-btn" href="#">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-google"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</div>
+
+	</div>
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="address">
+						<h3>Webmarket</h3>
+						<p class="mb-4 mt-4">חדרה, ישראל</p>
+						<p><strong>טלפון:</strong><a href="tel:0585559595"> 0585559595</a></p>
+						<p><strong>מייל:</strong><a href="mailto:info@webmarket.co.il"> info@webmarket.co.il</a></p>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-sm-6 footer-menus">
+					<h4>לינקים שימושיים</h4>
+					<ul>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:index' %}">בית</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'catalogue:index' %}">חנות</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'wagtail_serve' home %}">מאמרים</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:aboutus' %}">אודותינו</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:contact' %}">יצירת קשר</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-3 col-sm-6 footer-menus">
+					<h4>השירותים שלנו</h4>
+					<ul>
+						<li><i class="fas fa-check"></i> <a href="#">בניית אתרים</a></li>
+						<li><i class="fas fa-check"></i> <a href="#">פתרונות מחשוב</a></li>
+						<li><i class="fas fa-check"></i> <a href="#">שירותי תמיכה</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:support-price' %">מחירון</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:faq' %}">שאלות נפוצות</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-4 col-sm-6 newsletter">
+					<h4>העדכונים שלנו</h4>
+					<p>הצטפרו לרשימת התפוצה שלנו וקבלו מבצעים וחדשות!</p>
+					<form action="" method="post"><input type="email" name="email" /><input type="submit" value=" הרשם" /></form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p class="text-center mb-2">&copy; Copyright <strong>Webmarket</strong>. All Rights Reserved</p>
+					<p class="text-center mb-0">Created by <a href="https://www.Webmarket.co.il/">Webmarket.co.il</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+{% endblock %}

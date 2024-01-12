@@ -1,0 +1,67 @@
+{% extends 'django_mfa/base.html' %}
+{% load i18n %}
+{% block content %}
+
+<style>
+  .rtl {
+    text-align: right;
+  }
+</style>
+<div class="panel panel-default text-right">
+  <div class="panel-heading">
+    <h3>אימות דו שלבי</h3>
+  </div>
+  {% if twofactor_enabled %}
+  <div class="panel-body text-right">
+    <p style="font-size: 18px;">
+      מצב:
+      <span class="text-danger">
+        <strong style="color:rgb(34, 230, 0)">מופעל</strong>
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12">
+          <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path>
+        </svg>
+      </span>
+    </p>
+    <a href="{% url 'users:mfa:disable_mfa' %}" class="btn btn-default">ביטול אימות דו שלבי</a>
+  </div>
+  {% else %}
+  <div class="panel-body">
+    <p class="two-factor-status">
+      מצב:
+      <span class="text-danger">
+        <strong>כבוי</strong>
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12">
+          <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path>
+        </svg>
+      </span>
+    </p>
+    <a href="{% url 'users:mfa:configure_mfa' %}" class="btn btn-default">הפעל אימות דו שלבי</a>
+    <p class="help">
+      <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication" target="_blank" rel="noopener noreferrer">אימות דו שלבי</a> מאפשר עוד שכבת הגנה לחשבון שלך, על מנת להתחבר תצטרך להזין קוד נוסף
+    </p>
+  </div>
+  {% endif %}
+</div>
+<br>
+
+<br>
+<div class="panel panel-default text-right">
+  <div class="panel-heading">
+    <h3>מצב קודי גיבוי</h3>
+  </div>
+  <div class="panel-body">
+    <p class="two-factor-status">
+      {% trans "קודי גיבוי נותרים" %}:
+      <span class="text-danger">
+        <strong> {{ backup_codes | length }} </strong>
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12">
+          <path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path>
+        </svg>
+      </span>
+    </p>
+    <a href="{% url 'users:mfa:recovery_codes' %}" class="btn btn-default">הצג קודי גיבוי</a>
+    <p class="help">
+    </p>
+  </div>
+</div>
+{% endblock %}

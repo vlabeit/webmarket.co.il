@@ -1,0 +1,183 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+{% include 'main/partials/preloader.html' %}
+
+<section id="home" class="hero-section d-flex align-items-center sectionbg2" style="padding-top: 50px">
+    <div class="anim-elements">
+        <div class="anim-element"></div>
+        <div class="anim-element"></div>
+        <div class="anim-element"></div>
+        <div class="anim-element"></div>
+        <div class="anim-element"></div>
+    </div>
+    <div class="container pos-rel">{% include 'main/partials/site-titles.html' %}
+    </div>
+    <div>{% include 'main/partials/hero-animation.html' %}</div>
+
+</section><!--/. hero-section-->
+
+<section id="screenshots" class="pos-rel padding" style="margin-top: -30px; ">
+    {% include 'main/partials/screenshot_carousel.html' %}
+ </section><!--/. screenshot-section -->
+ 
+
+
+ <section  class="mt-5 sectionbg4  pos-rel wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+    <div class="dashboard-content container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div style="margin-top: 10%; padding-top: 10%;" class="row align-items-center">
+            <div class="col-lg-8 d-lg-block">
+                <img style="margin-right: 1%; border-radius: 15px;" src="{% static 'img/dashboard.png' %}" alt="">
+            </div>
+            <div class="col-lg-4">
+                <div style="margin-right: 5%;" class="content-info mt-5">
+                    <h2> מערכת שירות לקוחות וניהול אתר</h2>
+                    <p> במיוחד ללקוחתינו בנינו מערכת ניהול ייחודית. </p>
+                    <p> השאר מעודכן כל עת בסטטוס בניית האתר שלך, הוספת תוספים, אחסון, תמיכה, אבטחה ותוכן ישירות דרך המערכת. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/. content-section -->
+
+
+
+<section style="padding-top: 100px;" class="eyez center padding wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+    
+    {% include 'main/eye.html' %}
+    
+</section><!--/. replacepic-section -->
+
+
+<section id="feature" class="features-section padding wow fade-in-bottom sectionbg2">
+    {% include 'main/partials/features-home.html' %} 
+</section><!--/. features-section -->
+
+
+
+<section class="content-section pos-rel wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+    <div class="container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row align-items-center">
+            <div class="col-lg-5 d-none d-lg-block">
+                <img class="content-moc" src="{% static 'img/content-moc-1.png' %}" alt="">
+            </div>
+            <div class="col-lg-7">
+                <div class="content-info">
+                    <h2>רספונסיביות מלאה <br> התאמה מלאה לכל סוגי הניידים. </h2>
+                    <p> אנחנו לוקחים בחשבון שרוב הגלישה מגיעה כיום מהמכשירים הניידים בכיסים שלנו, לכן התאמת האתר לגרסאות הרבות של הניידים השונים היא חשובה במיוחד. </p>
+                    <a class="default-btn" href="{% url 'main:contact' %}">צור קשר<span></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/. content-section -->
+
+<!--<section class="counter-section pt-100">
+    <div class="container">
+        <div class="row" style="direction: ltr;">
+            <div class="col-lg-3 col-sm-6 sm-padding">
+                <div class="counter-item wow fadeInUp" data-wow-delay="200ms">
+                    <i class="icon-download color-red"></i>
+                    <h3><span class="odometer" data-count="2589">00</span></h3>
+                    <h4>Tottal Downloaded</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 sm-padding">
+                <div class="counter-item wow fadeInUp" data-wow-delay="300ms">
+                    <i class="icon-bargraph color-blue"></i>
+                    <h3><span class="odometer" data-count="1964">00</span></h3>
+                    <h4>Grow On Year</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 sm-padding">
+                <div class="counter-item wow fadeInUp" data-wow-delay="400ms">
+                    <i class="icon-tools color-yellow"></i>
+                    <h3><span class="odometer" data-count="7921">00</span></h3>
+                    <h4>Clients Reviews</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 sm-padding">
+                <div class="counter-item wow fadeInUp" data-wow-delay="500ms">
+                    <i class="icon-ribbon color-green"></i>
+                    <h3><span class="odometer" data-count="5385">00</span></h3>
+                    <h4>People Subscribed</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="content-section padding mt-5 wow fade-in-bottom sectionbg2">
+    <div class="container">
+        {% include 'main/p_items.html' %}
+    </div>
+</section><!--/. content-section -->
+
+<section class="wow bounceInRight">
+    {% include 'main/partials/testimonial.html' %}
+</section><!--/. testimonial-section -->
+
+<div class="sponsor-section padding">
+    <div class="container wow fade-in-bottom">
+        <div id="sponsor-carousel" class="sponsor-carousel owl-carousel">
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-1.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-2.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-3.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-4.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-5.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-6.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-3.png' %}" >
+            </div>
+            <div class="sponsor-item">
+                <img src="{% static 'img/sponsor-4.png' %}" >
+            </div>
+        </div>
+    </div>
+</div><!--/. sponsor-section --> 
+
+<script>
+    /*=========================================================================
+    Sponsor Carousel
+=========================================================================*/
+$('#sponsor-carousel').owlCarousel({
+    loop: true,
+    margin: 15,
+    center: false,
+    autoplay: true,
+    smartSpeed: 500,
+    nav: false,
+    navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+    dots: false,
+    rtl: true,
+    responsive : {
+        0 : {
+            items: 2
+        },
+        480 : {
+            items: 3,
+        },
+        768 : {
+            items: 3,
+        },
+        992 : {
+            items: 6,
+        }
+    }
+});
+</script>
+{% endblock %}
+

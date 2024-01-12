@@ -1,0 +1,72 @@
+{% extends 'django_mfa/base.html' %}
+{% load otp_tags %}
+{% block content %}
+{% if is_verified %}
+<div>
+  You have successfully enabled mfa on your account.
+</div>
+{% else %}
+{% if qr_code %}
+<div class="setup-wrapper text-right">
+  <div class="setup-header">
+    <h1>הוסף את האתר לאפליקצית אימות הדו שלבי שלך</h1>
+    <p class="lead">
+      הינך נדרש להוריד אפליקצית אימות למכשיר הנייד שלך
+    </p>
+
+    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">הורדה לאנדרואיד</a>
+    <br>
+    <a href="https://apps.apple.com/us/app/google-authenticator/id388497605">הורדה לאייפון</a>
+    <br>
+    באפשרותך להשתמש בכל אפליקציה אחרת*
+  </div>
+  <div class="setup-main two-factor-app-main">
+    <div class="setup-form-container">
+      <div class="simple-box">
+        <h3 class="simple-box-title">1. לחץ על ה+ וסרוק את הברקוד</h3>
+        {{qr_code|qrcode:"webmarket qrcode"}}
+        <div class="simple-box-footer">
+          
+        </div>
+      </div>
+      <p>
+        סרוק את התמונה למעלה עם אפליקציית האימות בטלפון שלך.
+      לאחר סריקת תמונת הברקוד, האפליקציה תציג קוד בן שש ספרות אותו תוכלו להזין למטה.
+      </p>
+      <hr>
+      <!-- </textarea> --><!-- '"` -->
+      <form accept-charset="UTF-8" action="{% url 'users:mfa:enable_mfa' %}" method="post">
+        {% csrf_token %}
+        <dl class="form-group">
+          <dt><label for="two-factor-code">2. הזן את הקוד בעל 6 הספרות מהאפליקציה</label></dt>
+          <dd>
+            <input class="form-control" id="two-factor-code" type="text" name="verification_code" value="" placeholder="הזן קוד בעל 6 ספרות." autocomplete="off">
+            <input type="hidden" name="secret_key" value="{{secret_key}}">
+            <input type="hidden" name="otp_type" value="TOTP">
+          </dd>
+        </dl>
+        <button type="submit" class="btn btn-primary">
+        הפעל אימות דו שלבי
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="two-factor-intro text-right">
+  אפליקצית האימות הדו-שלבי מוסיפה שכבת אבטחה נוספת לחשבון שלך. 
+  בנוסף לשם המשתמש והסיסמה שלך, תצטרך להזין קוד שהאפליקציה הזו שולחת לך באמצעות טקסט או אפליקציה בטלפון שלך.
+.</p>
+  
+      <form action="." method="post">{% csrf_token %}
+        <input type="hidden" name="otp_type" value="hotp">
+        <button type="submit" class="btn btn-primary">הפעל באמצעות אפליקציה</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div style="text-align: right; "> <a href="{{request.META.HTTP_REFERER}}" class="btn btn-default">בטל</a></div>
+
+{% endif %}
+{% endif %}
+{% endblock %}

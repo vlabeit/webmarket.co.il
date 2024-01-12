@@ -1,0 +1,25 @@
+{# blocks/block_text.html #}
+{% load wagtailcore_tags %}
+
+
+{# blocks/block_text.html #}
+{% load wagtailcore_tags %}
+
+<div class="custom-text-block">
+   {{ self.text|richtext }}
+</div>
+
+
+<div class="custom-text-block">
+   {{ self.text|richtext }}
+</div>
+
+
+
+{# blocks/block_video_embed.html #}
+
+{% load wagtailembeds_tags %}
+
+<div class="block-video-embed">
+   {% embed self.video.url %}
+</div>

@@ -1,0 +1,64 @@
+{% comment %} {% extends 'userpanel/base.html' %} {% endcomment %}
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html class="no-js" lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+
+
+{% block main %}
+<style>
+    ** {
+        all: unset;
+        }
+</style>
+{{form.media}}
+<div style="margin-top: 8%; padding-right: 5%; padding-left: 5%;">
+    <h2 style="margin-bottom: 20px;">כתוב תוכן</h2>
+    
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+        {% if form.errors %}
+        {% for field in form.errors %}
+            <div class="alert-danger" style="display: inline;"> {{form.errors}}</div>                                                
+        {% endfor %}
+        {% endif %}
+
+        {{form.content}}
+
+        <div class="mt-5 mb-3"><h3>או העלה קובץ</h3></div>
+        {{form.content_upload}}
+
+        {% comment %} {{form.images}} {% endcomment %}
+
+        <div class="container mt-5">
+            {% if form.captcha.errors %}
+            {% for field in form.captcha %}
+                <div class="alert-danger" style="display: inline;"> {{form.errors.captcha}}</div>                                                
+            {% endfor %}
+            {% endif %}
+            {{ form.captcha }}
+        </div>
+        <button class="btn btn-outline-info" type="submit">אשר</button>
+        
+        <div class="mt-5 mb-3"><h2>העלה תמונות</h2></div>
+        
+        <div class="mt-5" style="padding-left: 5%;">
+        {% include 'userpanel/picture-upload.html' %}
+        </div>
+    </form>
+    
+    
+    </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/translations/he.js"></script>
+    
+    <script>window.CKEDITOR_BASEPATH = '{% static "ckeditor5/" %}';</script>
+
+    {% endblock %}
+
+    </html>

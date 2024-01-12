@@ -1,0 +1,958 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# dokterbob <mathijs@mathijsfietst.nl>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: django-newsletter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-23 19:53+0200\n"
+"PO-Revision-Date: 2020-02-20 11:13+0000\n"
+"Last-Translator: dokterbob <mathijs@mathijsfietst.nl>\n"
+"Language-Team: English (http://www.transifex.com/dokterbob/django-newsletter/"
+"language/en/)\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\newsletter\addressimport\parsers.py:40
+#, python-format
+msgid "Entry '%s' does not contain a valid e-mail address."
+msgstr "Entry '%s' does not contain a valid e-mail address."
+
+#: .\newsletter\addressimport\parsers.py:55
+#, python-format
+msgid "The address file contains duplicate entries for '%s'."
+msgstr "The address file contains duplicate entries for '%s'."
+
+#: .\newsletter\addressimport\parsers.py:69
+msgid "Some entries are already subscribed to."
+msgstr "Some entries are already subscribed to."
+
+#: .\newsletter\addressimport\parsers.py:108
+#, python-format
+msgid ""
+"E-mail address %(email)s too long, maximum length is %(email_length)s "
+"characters."
+msgstr ""
+"E-mail address %(email)s too long, maximum length is %(email_length)s "
+"characters."
+
+#: .\newsletter\addressimport\parsers.py:135
+#, python-format
+msgid "Name %(name)s too long, maximum length is %(name_length)s characters."
+msgstr "Name %(name)s too long, maximum length is %(name_length)s characters."
+
+#: .\newsletter\addressimport\parsers.py:196
+#: .\newsletter\addressimport\parsers.py:208
+#: .\newsletter\addressimport\parsers.py:243 .\newsletter\models.py:148
+msgid "name"
+msgstr "name"
+
+#: .\newsletter\addressimport\parsers.py:200
+msgid "display"
+msgstr "display"
+
+#: .\newsletter\addressimport\parsers.py:207
+#, python-format
+msgid ""
+"Name column not found. The name of this column should be either 'name' or "
+"'%s'."
+msgstr ""
+"Name column not found. The name of this column should be either 'name' or "
+"'%s'."
+
+#: .\newsletter\addressimport\parsers.py:219
+#: .\newsletter\addressimport\parsers.py:231
+#: .\newsletter\addressimport\parsers.py:244 .\newsletter\forms.py:44
+#: .\newsletter\forms.py:79 .\newsletter\forms.py:134 .\newsletter\models.py:43
+#: .\newsletter\models.py:162
+msgid "e-mail"
+msgstr "e-mail"
+
+#: .\newsletter\addressimport\parsers.py:229
+#, python-format
+msgid ""
+"E-mail column not found. The name of this column should be either 'email', "
+"'e-mail' or '%(email)s'."
+msgstr ""
+"E-mail column not found. The name of this column should be either 'email', "
+"'e-mail' or '%(email)s'."
+
+#: .\newsletter\addressimport\parsers.py:239
+#, fuzzy, python-format
+#| msgid ""
+#| "Could not properly determine the proper columns in the CSV-file. There "
+#| "should be a field called 'name' or '%(name)s' and one called 'e-mail' or "
+#| "'%(e-mail)s'."
+msgid ""
+"Could not properly determine the proper columns in the CSV-file. There "
+"should be a field called 'name' or '%(name)s' and one called 'e-mail' or "
+"'%(email)s'."
+msgstr ""
+"Could not properly determine the proper columns in the CSV-file. There "
+"should be a field called 'name' or '%(name)s' and one called 'e-mail' or "
+"'%(e-mail)s'."
+
+#: .\newsletter\addressimport\parsers.py:264
+#, python-format
+msgid "Row with content '%(row)s' does not contain a name and email field."
+msgstr "Row with content '%(row)s' does not contain a name and email field."
+
+#: .\newsletter\addressimport\parsers.py:290
+#, python-format
+msgid "Error reading vCard file: %s"
+msgstr "Error reading vCard file: %s"
+
+#: .\newsletter\addressimport\parsers.py:309
+#, python-format
+msgid "Entry '%s' contains no email address."
+msgstr "Entry '%s' contains no email address."
+
+#: .\newsletter\addressimport\parsers.py:345
+msgid "Some entries have no e-mail address."
+msgstr "Some entries have no e-mail address."
+
+#: .\newsletter\admin.py:85
+msgid "Messages"
+msgstr "Messages"
+
+#: .\newsletter\admin.py:89
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:16
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:16
+msgid "Subscriptions"
+msgstr "Subscriptions"
+
+#: .\newsletter\admin.py:93
+msgid "Submissions"
+msgstr "Submissions"
+
+#: .\newsletter\admin.py:105 .\newsletter\models.py:106
+#: .\newsletter\models.py:282 .\newsletter\models.py:490
+#: .\newsletter\models.py:705
+msgid "newsletter"
+msgstr "newsletter"
+
+#: .\newsletter\admin.py:123 .\newsletter\models.py:559
+msgid "submission"
+msgstr "submission"
+
+#: .\newsletter\admin.py:130
+msgid "publish date"
+msgstr "publish date"
+
+#: .\newsletter\admin.py:160
+msgid "Sent."
+msgstr "Sent."
+
+#: .\newsletter\admin.py:163
+msgid "Delayed submission."
+msgstr "Delayed submission."
+
+#: .\newsletter\admin.py:165
+msgid "Submitting."
+msgstr "Submitting."
+
+#: .\newsletter\admin.py:167
+msgid "Not sent."
+msgstr "Not sent."
+
+#: .\newsletter\admin.py:168 .\newsletter\admin.py:425
+#: .\newsletter\admin_forms.py:115
+msgid "Status"
+msgstr "Status"
+
+#: .\newsletter\admin.py:175
+msgid "Submission already sent."
+msgstr "Submission already sent."
+
+#: .\newsletter\admin.py:184
+msgid "Your submission is being sent."
+msgstr "Your submission is being sent."
+
+#: .\newsletter\admin.py:249
+msgid "Optional"
+msgstr "Optional"
+
+#: .\newsletter\admin.py:286 .\newsletter\models.py:421
+#: .\newsletter\models.py:471 .\newsletter\models.py:501
+#: .\newsletter\models.py:709
+msgid "message"
+msgstr "message"
+
+#: .\newsletter\admin.py:291
+#: .\newsletter\templates\admin\newsletter\message\change_form.html:9
+#: .\newsletter\templates\admin\newsletter\message\preview.html:13
+msgid "Preview"
+msgstr "Preview"
+
+#: .\newsletter\admin.py:309 .\newsletter\views.py:622
+msgid ""
+"No HTML template associated with the newsletter this message belongs to."
+msgstr ""
+"No HTML template associated with the newsletter this message belongs to."
+
+#: .\newsletter\admin.py:420 .\newsletter\admin_forms.py:103
+msgid "Subscribed"
+msgstr "Subscribed"
+
+#: .\newsletter\admin.py:422 .\newsletter\admin_forms.py:104
+msgid "Unsubscribed"
+msgstr "Unsubscribed"
+
+#: .\newsletter\admin.py:424
+msgid "Unactivated"
+msgstr "Unactivated"
+
+#: .\newsletter\admin.py:432 .\newsletter\models.py:296
+msgid "subscribe date"
+msgstr "subscribe date"
+
+#: .\newsletter\admin.py:439 .\newsletter\models.py:304
+msgid "unsubscribe date"
+msgstr "unsubscribe date"
+
+#: .\newsletter\admin.py:447
+#, python-format
+msgid "%d user has been successfully subscribed."
+msgid_plural "%d users have been successfully subscribed."
+msgstr[0] "%d user has been successfully subscribed."
+msgstr[1] "%d users have been successfully subscribed."
+
+#: .\newsletter\admin.py:452
+msgid "Subscribe selected users"
+msgstr "Subscribe selected users"
+
+#: .\newsletter\admin.py:459
+#, python-format
+msgid "%d user has been successfully unsubscribed."
+msgid_plural "%d users have been successfully unsubscribed."
+msgstr[0] "%d user has been successfully unsubscribed."
+msgstr[1] "%d users have been successfully unsubscribed."
+
+#: .\newsletter\admin.py:464
+msgid "Unsubscribe selected users"
+msgstr "Unsubscribe selected users"
+
+#: .\newsletter\admin.py:520
+#, python-format
+msgid "%d subscription has been successfully added."
+msgid_plural "%d subscriptions have been successfully added."
+msgstr[0] "%d subscription has been successfully added."
+msgstr[1] "%d subscriptions have been successfully added."
+
+#: .\newsletter\admin_forms.py:43
+#, python-format
+msgid "File type '%s' was not recognized."
+msgstr "File type '%s' was not recognized."
+
+#: .\newsletter\admin_forms.py:60
+#, python-format
+msgid "File extension '%s' was not recognized."
+msgstr "File extension '%s' was not recognized."
+
+#: .\newsletter\admin_forms.py:64
+msgid "No entries could found in this file."
+msgstr "No entries could found in this file."
+
+#: .\newsletter\admin_forms.py:72
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:12
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:12
+#: .\newsletter\templates\newsletter\common.html:6
+#: .\newsletter\templates\newsletter\newsletter_detail.html:10
+#: .\newsletter\templates\newsletter\newsletter_list.html:14
+#: .\newsletter\templates\newsletter\newsletter_list.html:32
+#: .\newsletter\templates\newsletter\subscription_activate.html:5
+#: .\newsletter\templates\newsletter\subscription_activate.html:8
+#: .\newsletter\templates\newsletter\subscription_subscribe_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_subscribe_activated.html:8
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_activated.html:8
+#: .\newsletter\templates\newsletter\subscription_update_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: .\newsletter\admin_forms.py:75
+msgid "Address file"
+msgstr "Address file"
+
+#: .\newsletter\admin_forms.py:77
+msgid "Ignore non-fatal errors"
+msgstr "Ignore non-fatal errors"
+
+#: .\newsletter\admin_forms.py:88
+msgid "You should confirm in order to continue."
+msgstr "You should confirm in order to continue."
+
+#: .\newsletter\admin_forms.py:91
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:23
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:28
+msgid "Confirm import"
+msgstr "Confirm import"
+
+#: .\newsletter\admin_forms.py:121 .\newsletter\admin_forms.py:129
+msgid "If a user has been selected this field should remain empty."
+msgstr "If a user has been selected this field should remain empty."
+
+#: .\newsletter\admin_forms.py:139
+msgid "Either a user must be selected or an email address must be specified."
+msgstr "Either a user must be selected or an email address must be specified."
+
+#: .\newsletter\admin_forms.py:164
+msgid ""
+"This message has already been published in some other submission. Messages "
+"can only be published once."
+msgstr ""
+"This message has already been published in some other submission. Messages "
+"can only be published once."
+
+#: .\newsletter\admin_utils.py:25
+#, fuzzy, python-format
+#| msgid "%(name)s object with primary key %(key)r does not exist."
+msgid "%(name)s object with primary key '%(key)s' does not exist."
+msgstr "%(name)s object with primary key %(key)r does not exist."
+
+#: .\newsletter\forms.py:59
+msgid "Your e-mail address has already been subscribed to."
+msgstr "Your e-mail address has already been subscribed to."
+
+#: .\newsletter\forms.py:88
+msgid "This subscription has not yet been activated."
+msgstr "This subscription has not yet been activated."
+
+#: .\newsletter\forms.py:106
+msgid "This e-mail address has not been subscribed to."
+msgstr "This e-mail address has not been subscribed to."
+
+#: .\newsletter\forms.py:121
+msgid "This subscription has already been unsubscribed from."
+msgstr "This subscription has already been unsubscribed from."
+
+#: .\newsletter\forms.py:142
+msgid "The validation code supplied by you does not match."
+msgstr "The validation code supplied by you does not match."
+
+#: .\newsletter\forms.py:148
+msgid "Activation code"
+msgstr "Activation code"
+
+#: .\newsletter\management\commands\submit_newsletter.py:14
+msgid "Submit pending messages."
+msgstr "Submit pending messages."
+
+#: .\newsletter\management\commands\submit_newsletter.py:30
+msgid "Submitting queued newsletter mailings"
+msgstr "Submitting queued newsletter mailings"
+
+#: .\newsletter\models.py:38
+msgid "newsletter title"
+msgstr "newsletter title"
+
+#: .\newsletter\models.py:43
+msgid "Sender e-mail"
+msgstr "Sender e-mail"
+
+#: .\newsletter\models.py:46
+msgid "sender"
+msgstr "sender"
+
+#: .\newsletter\models.py:46
+msgid "Sender name"
+msgstr "Sender name"
+
+#: .\newsletter\models.py:50
+msgid "visible"
+msgstr "visible"
+
+#: .\newsletter\models.py:54
+msgid "send html"
+msgstr "send html"
+
+#: .\newsletter\models.py:55
+msgid "Whether or not to send HTML versions of e-mails."
+msgstr "Whether or not to send HTML versions of e-mails."
+
+#: .\newsletter\models.py:107
+msgid "newsletters"
+msgstr "newsletters"
+
+#: .\newsletter\models.py:142
+msgid "user"
+msgstr "user"
+
+#: .\newsletter\models.py:148
+msgid "optional"
+msgstr "optional"
+
+#: .\newsletter\models.py:192
+#, python-format
+msgid "Updated subscription %(subscription)s to %(action)s."
+msgstr "Updated subscription %(subscription)s to %(action)s."
+
+#: .\newsletter\models.py:233
+msgid "Neither an email nor a username is set. This asks for inconsistency!"
+msgstr "Neither an email nor a username is set. This asks for inconsistency!"
+
+#: .\newsletter\models.py:237
+msgid "If user is set, email must be null and vice versa."
+msgstr "If user is set, email must be null and vice versa."
+
+#: .\newsletter\models.py:279
+msgid "IP address"
+msgstr "IP address"
+
+#: .\newsletter\models.py:288
+msgid "activation code"
+msgstr "activation code"
+
+#: .\newsletter\models.py:293
+msgid "subscribed"
+msgstr "subscribed"
+
+#: .\newsletter\models.py:301
+msgid "unsubscribed"
+msgstr "unsubscribed"
+
+#: .\newsletter\models.py:309
+#, python-format
+msgid "%(name)s <%(email)s> to %(newsletter)s"
+msgstr "%(name)s <%(email)s> to %(newsletter)s"
+
+#: .\newsletter\models.py:316
+#, python-format
+msgid "%(email)s to %(newsletter)s"
+msgstr "%(email)s to %(newsletter)s"
+
+#: .\newsletter\models.py:322
+msgid "subscription"
+msgstr "subscription"
+
+#: .\newsletter\models.py:323
+msgid "subscriptions"
+msgstr "subscriptions"
+
+#: .\newsletter\models.py:400
+msgid ""
+"Sort order determines the order in which articles are concatenated in a post."
+msgstr ""
+"Sort order determines the order in which articles are concatenated in a post."
+
+#: .\newsletter\models.py:402
+msgid "sort order"
+msgstr "sort order"
+
+#: .\newsletter\models.py:405 .\newsletter\models.py:486
+msgid "title"
+msgstr "title"
+
+#: .\newsletter\models.py:406
+msgid "text"
+msgstr "text"
+
+#: .\newsletter\models.py:409
+msgid "link"
+msgstr "link"
+
+#: .\newsletter\models.py:415
+msgid "image"
+msgstr "image"
+
+#: .\newsletter\models.py:427
+msgid "article"
+msgstr "article"
+
+#: .\newsletter\models.py:428
+msgid "articles"
+msgstr "articles"
+
+#: .\newsletter\models.py:455 .\newsletter\models.py:467
+msgid "attachment"
+msgstr ""
+
+#: .\newsletter\models.py:456
+msgid "attachments"
+msgstr ""
+
+#: .\newsletter\models.py:459
+#, fuzzy, python-format
+#| msgid "%(title)s in %(newsletter)s"
+msgid "%(file_name)s on %(message)s"
+msgstr "%(title)s in %(newsletter)s"
+
+#: .\newsletter\models.py:487
+msgid "slug"
+msgstr "slug"
+
+#: .\newsletter\models.py:494
+msgid "created"
+msgstr "created"
+
+#: .\newsletter\models.py:497
+msgid "modified"
+msgstr "modified"
+
+#: .\newsletter\models.py:502
+msgid "messages"
+msgstr "messages"
+
+#: .\newsletter\models.py:507
+#, python-format
+msgid "%(title)s in %(newsletter)s"
+msgstr "%(title)s in %(newsletter)s"
+
+#: .\newsletter\models.py:560
+msgid "submissions"
+msgstr "submissions"
+
+#: .\newsletter\models.py:563
+#, python-format
+msgid "%(newsletter)s on %(publish_date)s"
+msgstr "%(newsletter)s on %(publish_date)s"
+
+#: .\newsletter\models.py:582
+#, python-format
+msgid "Submitting %(submission)s to %(count)d people"
+msgstr "Submitting %(submission)s to %(count)d people"
+
+#: .\newsletter\models.py:644
+#, python-format
+msgid "Submitting message to: %s."
+msgstr "Submitting message to: %s."
+
+#: .\newsletter\models.py:653
+#, python-format
+msgid "Message %(subscription)s failed with error: %(error)s"
+msgstr "Message %(subscription)s failed with error: %(error)s"
+
+#: .\newsletter\models.py:671
+#, python-format
+msgid "Submission of message %s"
+msgstr "Submission of message %s"
+
+#: .\newsletter\models.py:715
+msgid ""
+"If you select none, the system will automatically find the subscribers for "
+"you."
+msgstr ""
+"If you select none, the system will automatically find the subscribers for "
+"you."
+
+#: .\newsletter\models.py:717
+msgid "recipients"
+msgstr "recipients"
+
+#: .\newsletter\models.py:722
+msgid "publication date"
+msgstr "publication date"
+
+#: .\newsletter\models.py:726
+msgid "publish"
+msgstr "publish"
+
+#: .\newsletter\models.py:727
+msgid "Publish in archive."
+msgstr "Publish in archive."
+
+#: .\newsletter\models.py:731
+msgid "prepared"
+msgstr "prepared"
+
+#: .\newsletter\models.py:735
+msgid "sent"
+msgstr "sent"
+
+#: .\newsletter\models.py:739
+msgid "sending"
+msgstr "sending"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:5
+#: .\newsletter\templates\admin\newsletter\message\preview.html:19
+msgid "Preview message"
+msgstr "Preview message"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:9
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:8
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:8
+msgid "Home"
+msgstr "Home"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:11
+msgid "Message"
+msgstr "Message"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:22
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:28
+msgid "Change"
+msgstr "Change"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:23
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:29
+msgid "Create submission"
+msgstr "Create submission"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:26
+#: .\newsletter\templates\newsletter\message\message.html:31
+msgid "Attachments"
+msgstr ""
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:31
+msgid "No Attachments"
+msgstr ""
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:36
+msgid "HTML"
+msgstr "HTML"
+
+#: .\newsletter\templates\admin\newsletter\message\preview.html:40
+msgid "Text"
+msgstr "Text"
+
+#: .\newsletter\templates\admin\newsletter\submission\change_form.html:17
+msgid "Submit"
+msgstr "Submit"
+
+#: .\newsletter\templates\admin\newsletter\subscription\change_list.html:5
+msgid "Import"
+msgstr "Import"
+
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:3
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:20
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:3
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:19
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:24
+msgid "Import addresses"
+msgstr "Import addresses"
+
+#: .\newsletter\templates\admin\newsletter\subscription\confirmimportform.html:40
+msgid "Confirm"
+msgstr "Confirm"
+
+#: .\newsletter\templates\admin\newsletter\subscription\importform.html:37
+msgid "Upload"
+msgstr "Upload"
+
+#: .\newsletter\templates\newsletter\message\message.html:19
+msgid "Read more"
+msgstr "Read more"
+
+#: .\newsletter\templates\newsletter\message\message.html:24
+msgid "Read message online"
+msgstr "Read message online"
+
+#: .\newsletter\templates\newsletter\message\message.html:26
+#: .\newsletter\templates\newsletter\newsletter_detail.html:21
+#: .\newsletter\templates\newsletter\subscription_unsubscribe.html:23
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_user.html:23
+msgid "Unsubscribe"
+msgstr "Unsubscribe"
+
+#: .\newsletter\templates\newsletter\message\message.txt:15
+msgid "Unsubscribe:"
+msgstr "Unsubscribe:"
+
+#: .\newsletter\templates\newsletter\message\subscribe.html:6
+#, python-format
+msgid "Subscription to %(title)s"
+msgstr "Subscription to %(title)s"
+
+#: .\newsletter\templates\newsletter\message\subscribe.html:10
+#: .\newsletter\templates\newsletter\message\subscribe.txt:1
+#: .\newsletter\templates\newsletter\message\unsubscribe.html:9
+#: .\newsletter\templates\newsletter\message\unsubscribe.txt:1
+#: .\newsletter\templates\newsletter\message\update.html:9
+#: .\newsletter\templates\newsletter\message\update.txt:1
+msgid "Sir/Madam"
+msgstr "Sir/Madam"
+
+#: .\newsletter\templates\newsletter\message\subscribe.html:10
+#: .\newsletter\templates\newsletter\message\subscribe.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested a subscription to %(title)s.\n"
+"\n"
+"If you would like to confirm your subscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested a subscription to %(title)s.\n"
+"\n"
+"If you would like to confirm your subscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+
+#: .\newsletter\templates\newsletter\message\subscribe_subject.txt:1
+msgid "Confirm subscription"
+msgstr "Confirm subscription"
+
+#: .\newsletter\templates\newsletter\message\unsubscribe.html:6
+#, python-format
+msgid "Unsubscription from %(title)s"
+msgstr "Unsubscription from %(title)s"
+
+#: .\newsletter\templates\newsletter\message\unsubscribe.html:9
+#: .\newsletter\templates\newsletter\message\unsubscribe.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested unsubscription from %(title)s.\n"
+"\n"
+"If you would like to confirm your unsubscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested unsubscription from %(title)s.\n"
+"\n"
+"If you would like to confirm your unsubscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+
+#: .\newsletter\templates\newsletter\message\unsubscribe_subject.txt:1
+msgid "Confirm unsubscription"
+msgstr "Confirm unsubscription"
+
+#: .\newsletter\templates\newsletter\message\update.html:6
+#, python-format
+msgid "Update of subscription to %(title)s"
+msgstr "Update of subscription to %(title)s"
+
+#: .\newsletter\templates\newsletter\message\update.html:9
+#: .\newsletter\templates\newsletter\message\update.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested updating your personal information "
+"for %(title)s.\n"
+"\n"
+"To make changes to your information in our database, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested updating your personal information "
+"for %(title)s.\n"
+"\n"
+"To make changes to your information in our database, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+
+#: .\newsletter\templates\newsletter\message\update_subject.txt:1
+msgid "Update information"
+msgstr "Update information"
+
+#: .\newsletter\templates\newsletter\newsletter_detail.html:5
+msgid "Newsletter detail"
+msgstr "Newsletter detail"
+
+#: .\newsletter\templates\newsletter\newsletter_detail.html:13
+#: .\newsletter\templates\newsletter\newsletter_list.html:16
+#: .\newsletter\templates\newsletter\subscription_subscribe.html:23
+#: .\newsletter\templates\newsletter\subscription_subscribe_user.html:22
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#: .\newsletter\templates\newsletter\newsletter_detail.html:17
+msgid "Update"
+msgstr "Update"
+
+#: .\newsletter\templates\newsletter\newsletter_detail.html:24
+msgid "Archive"
+msgstr "Archive"
+
+#: .\newsletter\templates\newsletter\newsletter_detail.html:27
+#: .\newsletter\templates\newsletter\submission_archive.html:18
+msgid "Back to list"
+msgstr "Back to list"
+
+#: .\newsletter\templates\newsletter\newsletter_list.html:5
+msgid "Newsletter list"
+msgstr "Newsletter list"
+
+#: .\newsletter\templates\newsletter\newsletter_list.html:27
+msgid "Update subscriptions"
+msgstr "Update subscriptions"
+
+#: .\newsletter\templates\newsletter\submission_archive.html:5
+#: .\newsletter\templates\newsletter\submission_archive.html:10
+msgid "Newsletter archive"
+msgstr "Newsletter archive"
+
+#: .\newsletter\templates\newsletter\subscription_activate.html:5
+#: .\newsletter\templates\newsletter\subscription_activate.html:8
+#: .\newsletter\templates\newsletter\subscription_subscribe_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_subscribe_activated.html:8
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_activated.html:8
+#: .\newsletter\templates\newsletter\subscription_update_activated.html:5
+#: .\newsletter\templates\newsletter\subscription_update_activated.html:8
+msgid "activate"
+msgstr "activate"
+
+#: .\newsletter\templates\newsletter\subscription_activate.html:13
+msgid "Activate"
+msgstr "Activate"
+
+#: .\newsletter\templates\newsletter\subscription_subscribe.html:5
+#: .\newsletter\templates\newsletter\subscription_subscribe.html:8
+#: .\newsletter\templates\newsletter\subscription_subscribe_email_sent.html:5
+#: .\newsletter\templates\newsletter\subscription_subscribe_email_sent.html:8
+#: .\newsletter\templates\newsletter\subscription_subscribe_user.html:5
+#: .\newsletter\templates\newsletter\subscription_subscribe_user.html:8
+msgid "Newsletter subscribe"
+msgstr "Newsletter subscribe"
+
+#: .\newsletter\templates\newsletter\subscription_subscribe.html:11
+#: .\newsletter\templates\newsletter\subscription_unsubscribe.html:11
+#: .\newsletter\templates\newsletter\subscription_update.html:11
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+
+#: .\newsletter\templates\newsletter\subscription_subscribe_activated.html:10
+msgid "Your subscription has successfully been activated."
+msgstr "Your subscription has successfully been activated."
+
+#: .\newsletter\templates\newsletter\subscription_subscribe_email_sent.html:10
+msgid ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+msgstr ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+
+#: .\newsletter\templates\newsletter\subscription_subscribe_user.html:19
+msgid "Do you want to subscribe to this newsletter?"
+msgstr "Do you want to subscribe to this newsletter?"
+
+#: .\newsletter\templates\newsletter\subscription_unsubscribe.html:5
+#: .\newsletter\templates\newsletter\subscription_unsubscribe.html:8
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_email_sent.html:5
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_email_sent.html:8
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_user.html:5
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_user.html:8
+msgid "Newsletter unsubscribe"
+msgstr "Newsletter unsubscribe"
+
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_activated.html:10
+msgid "You have successfully been unsubscribed."
+msgstr "You have successfully been unsubscribed."
+
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_email_sent.html:10
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+
+#: .\newsletter\templates\newsletter\subscription_unsubscribe_user.html:20
+msgid "Do you want to unsubscribe from this newsletter?"
+msgstr "Do you want to unsubscribe from this newsletter?"
+
+#: .\newsletter\templates\newsletter\subscription_update.html:5
+#: .\newsletter\templates\newsletter\subscription_update.html:8
+#: .\newsletter\templates\newsletter\subscription_update_email_sent.html:5
+#: .\newsletter\templates\newsletter\subscription_update_email_sent.html:8
+msgid "Newsletter update"
+msgstr "Newsletter update"
+
+#: .\newsletter\templates\newsletter\subscription_update.html:23
+msgid "Update subscription"
+msgstr "Update subscription"
+
+#: .\newsletter\templates\newsletter\subscription_update_activated.html:10
+msgid "Your subscription has successfully been updated."
+msgstr "Your subscription has successfully been updated."
+
+#: .\newsletter\templates\newsletter\subscription_update_email_sent.html:10
+msgid ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+msgstr ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+
+#: .\newsletter\templates\widget\image.html:2
+msgid "Currently:"
+msgstr "Currently:"
+
+#: .\newsletter\templates\widget\image.html:4
+msgid "Change:"
+msgstr "Change:"
+
+#: .\newsletter\validators.py:15
+#, python-format
+msgid ""
+"The e-mail address '%(email)s' belongs to a user with an account on this "
+"site. Please log in as that user and try again."
+msgstr ""
+"The e-mail address '%(email)s' belongs to a user with an account on this "
+"site. Please log in as that user and try again."
+
+#: .\newsletter\views.py:120
+msgid "Your changes have been saved."
+msgstr "Your changes have been saved."
+
+#: .\newsletter\views.py:311
+#, python-format
+msgid "You have been subscribed to %s."
+msgstr "You have been subscribed to %s."
+
+#: .\newsletter\views.py:315
+#, python-format
+msgid "User %(rs)s subscribed to %(my_newsletter)s."
+msgstr "User %(rs)s subscribed to %(my_newsletter)s."
+
+#: .\newsletter\views.py:325
+#, python-format
+msgid "You are already subscribed to %s."
+msgstr "You are already subscribed to %s."
+
+#: .\newsletter\views.py:350
+#, python-format
+msgid "You have been unsubscribed from %s."
+msgstr "You have been unsubscribed from %s."
+
+#: .\newsletter\views.py:354
+#, python-format
+msgid "User %(rs)s unsubscribed from %(my_newsletter)s."
+msgstr "User %(rs)s unsubscribed from %(my_newsletter)s."
+
+#: .\newsletter\views.py:367
+#, python-format
+msgid "You are not subscribed to %s."
+msgstr "You are not subscribed to %s."

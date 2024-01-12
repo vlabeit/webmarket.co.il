@@ -1,0 +1,250 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block main %}
+<div>
+<div class="container light-style flex-grow-1 container-p-y">
+    <div class="card overflow-hidden" style="border-radius: 30px; margin-top: 100px;">
+      <div class="row no-gutters row-bordered row-border-light">
+        <div class="col-md-3 pt-0">
+          <div class="list-group list-group-flush account-settings-links">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general"><i class="icon-user profile2"></i> כללי</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password"><i class="icon-user pass"></i> שינוי סיסמא</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info"><i class="icon-user security"></i> אבטחה</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links"><i class="icon-user notification"></i> התראות</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections"><i class="icon-user facebook"></i> חיבורים</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications"><i class="icon-user api"></i> API</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-lang">
+              
+              
+              {% if LANGUAGE_CODE == 'he' %}
+              <i class="icon-user he">
+              {% elif LANGUAGE_CODE == 'en' %}
+              <i class="icon-user en">
+              {% elif LANGUAGE_CODE == 'ru' %}
+              <i class="icon-user ru">
+              {% endif %}
+
+
+
+              </i> שפה</a>
+          
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="account-general">
+
+              <div class="card-body media align-items-center">
+                <img src="https://webmarketcoil.s3.us-east-2.amazonaws.com/{{ user.profile.image }}" alt="profile-webmarket" class="d-block ui-w-80">
+             
+              </div>
+              <hr class="border-light m-0">
+<strong>
+
+</strong>
+              <div class="card-body">
+                <div class="form-group">
+                  <label class="form-label"><strong>תאריך הרשמה</strong></label>
+                  <div>{{ user.date_joined|date:"d/m/Y G:i" }}</div>
+                </div>
+                <div class="form-group mt-4">
+                  <label class="form-label"><strong>תאריך התחברות אחרון</strong></label>
+                  <div>{{ user.last_login|date:"d/m/Y G:i" }}</div>
+                </div>
+                <div class="form-group mt-4">
+                  <label class="form-label"><strong>אימייל</strong></label>
+                  <div>{{ user.email }}</div>
+                  
+                  {% if emails.verified is not True %}
+                  
+                  <div class="alert alert-warning mt-3">
+                    האימייל שלך לא מאושר, אנא בדוק בתיבת הדואר הנכנס.<br>
+                    
+                  </div>
+                  {% endif %}
+                  <br>
+                  <style>
+                    .iframe-emailver {
+                      width: 100%;
+                      height: 16rem;
+                      text-align: center;
+                      
+                      
+                    }
+                  </style>
+  
+                  <iframe src="{% url 'account_email' %}" title="email verification" class="iframe-emailver"></iframe>
+                </div>
+
+                
+                
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="account-change-password">
+              <div class="card-body pb-2">
+                <a class ="mt-5" href="{% url 'users:password-change' %}">לחץ כאן לשינוי הסיסמא</a>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="account-info">
+              <div class="card-body pb-2">
+
+                <div class="container">
+               
+              </div>
+
+              </div>
+              <hr class="border-light m-0">
+              <div class="card-body pb-2">
+
+                <style>
+                  .iframe-userset {
+                    width: 100%;
+                    height: 40rem;
+                  }
+                </style>
+
+                <iframe src="{% url 'users:mfa:security_settings' %}" title="mfa settings" class="iframe-userset"></iframe>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="account-social-links">
+              <style>
+                .text-muted {
+                  color: #aeb0b4 !important;
+                }
+                .text-muted {
+                  font-weight: 300;
+                }
+              </style>
+
+
+
+              <div class="card-body pb-2">
+                
+
+               
+
+                <div class="container">
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+                          <div class="my-4">
+                              
+                              <h5 class="mb-0 mt-5">התראות דיוור</h5>
+                              <p>ערוך את הדרך בה אתה מקבל התראות.</p>
+                              <div class="list-group mb-5 shadow">
+                                  <div class="list-group-item">
+                                      <div class="row align-items-center">
+                                          <div class="col">
+                                              <strong class="mb-2">קבל הודעות דיוור</strong>
+                                              <p class="text-muted mb-0">אני מאשר/ת קבלת עדכונים לדוא"ל :</p>
+                                          </div>
+                                          <div class="col-auto">
+                                              <div class="custom-control custom-switch">
+                                                  <input type="checkbox" class="custom-control-input" id="activityLog" checked="">
+                                                  <span class="custom-control-label"></span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                
+                                  <div class="list-group-item">
+                                      <div class="row align-items-center">
+                                          <div class="col">
+                                              <strong class="mb-2">קבל הודעות סמס</strong>
+                                              <p class="text-muted mb-0">אני מאשר/ת קבלת עדכונים לטלפון הנייד :</p>
+                                          </div>
+                                          <div class="col-auto">
+                                              <div class="custom-control custom-switch">
+                                                  <input type="checkbox" class="custom-control-input" id="pinCode">
+                                                  <span class="custom-control-label"></span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <h5 class="mb-0">פעילות אחרונה</h5>
+                              <p>חיבורים אחרונים לחשבון.</p>
+                              <table class="table border bg-white">
+                                  <thead>
+                                      <tr>
+                                          <th>מערכת</th>
+                                          <th>מכשיר</th>
+                                          <th>מיקום</th>
+                                          <th>IP</th>
+                                          <th>זמן</th>
+                                          <th></th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for login in last_logins|slice:":5" %}
+                                      <tr>
+                                          <th style="font-size: 14px!important;" scope="col"><i class="fe fe-globe fe-12 text-muted mr-2"></i>{{ login.browser }} - {{ login.os }} {{ login.os_id }}</th>
+                                          <td>{{ login.device }}</td>
+                                          <td>{{ login.location }}</td>
+                                          <td>{{ login.user_ip_address }}</td>
+                                          <td>{{ login.time|date:"d/m/Y G:i" }}</td>
+                                      </tr>
+                                      {% endfor %}
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="account-connections">
+              <div class="card-body">
+               
+                <style>
+                  .iframe-connections {
+                    width: 100%;
+                    height: 26rem;
+                    text-align: center;
+                    
+                    
+                  }
+                </style>
+
+                <iframe src="{% url 'socialaccount_connections' %}" title="Apps Connections" class="iframe-connections"></iframe>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="account-notifications">
+              <div class="card-body pb-2">
+              </div>
+              <hr class="border-light m-0">
+              <div class="card-body pb-2">
+                <h6 class="mb-4">בקרוב...</h6>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="account-lang">
+              <div class="card-body pb-2">
+              </div>
+              <hr class="border-light m-0">
+              <div class="card-body pb-2">
+              {% include 'main/partials/lang_selector.html' %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="text-right mt-3">
+      <button type="button" class="btn btn-primary">עדכן</button>&nbsp;
+      <button type="button" class="btn btn-default">בטל</button>
+    </div> -->
+
+  </div>
+
+
+</div>
+
+  {% endblock %}

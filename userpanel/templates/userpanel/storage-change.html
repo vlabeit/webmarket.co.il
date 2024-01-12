@@ -1,0 +1,49 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+{% block main %}
+
+<div  style="margin-top: 10%; padding-right: 5%;">
+{% if storage_list %}
+
+התוכנית שלך עכשיו היא: {{storage_list.plan_name}} 
+לתקופה {% if storage_list.period == 'monthly' %} חודשית {% else %} שנתית {% endif %} בעלות {{storage_list.price}}.
+
+<br>
+
+
+ <h3 class="mt-3">אנא בחר תוכנית חדשה.</h3>
+ <small> שים לב, תוכנית שנתית ניתן רק לשדרג. </small>
+<br>
+
+<form method="post"> {% csrf_token %} 
+  <div class="content-wrapper" role="main">
+    {% if messages or form.errors %}
+        <div class="messages">
+            <ul>
+                {% if form.errors %}
+                   {{form.errors}}
+                {% endif %}
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div class="mt-5">
+  תוכנית: {{ form.plan}} תקופה: {{form.period}}</div>
+  <div class="container mt-5">
+    {% if form.captcha.errors %}
+    {% for field in form.captcha %}
+        <div class="alert-danger" style="display: inline;"> {{form.errors.captcha}}</div>                                                
+    {% endfor %}
+    {% endif %}
+    {{ form.captcha }}
+  </div>
+  <input type="submit" value="Save"> 
+</form> 
+{% else %}
+אין לך תוכניות פעילות
+{% endif %}
+<div class="mt-5">לפרטים על תוכניות התמיכה
+<a style="font-size: 1.5rem;" href="{% url 'main:support-price' %}"> לחץ כאן</a></div> 
+{% endblock %}

@@ -1,0 +1,485 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+
+{% block main %}
+
+
+
+    <style>
+     body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    margin-top: 100px;
+    
+}
+
+.progress {
+    height: 13px;
+    width: 350px;
+    margin: 20px 10px;
+    background-color: #5bd8e9;
+}
+
+.progress-bar {
+    background-color: #3c8ef8;
+    
+}
+
+.count {
+    width: 350px
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.card {
+    padding-bottom: 20px
+}
+
+.card-header {
+    padding: 20px 60px
+}
+
+.card-body {
+    display: none;
+    padding-left: 55px;
+    padding-right: 55px
+}
+
+.card-body.show {
+    display: block
+}
+
+.yellow-text {
+    color: #05001f
+}
+
+.card-block {
+    width: 235px;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    border-radius: 10px !important;
+    background-color: #FAFAFA;
+    margin-bottom: 30px
+}
+
+.radio {
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    text-align: center!important;
+}
+
+.radio:hover {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.radio.selected {
+    border: 1px solid #25b6f9;
+    box-shadow: 0px 8px 16px 0px #EEEEEE;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+.fa-check {
+    color: #2d75fb;
+    border-radius: 50%;
+    border: 2px solid #2dc1fb;
+    padding: 5px;
+    width: 2rem;
+    text-align: center;
+}
+
+.fa-circle {
+    color: #FAFAFA;
+    border-radius: 50%;
+    border: 2px solid #BDBDBD;
+    padding: 5px 6.155px;
+    width: 2rem;
+    position: absolute;
+    
+}
+
+.pic,
+.pic-0 {
+    height: 90px;
+    width: 130px
+}
+
+.pic {
+    margin-top: 40px;
+    margin-bottom: 50px
+}
+
+.btn-blue {
+    margin-top: 40px;
+    background-color: #1A237E;
+    color: #fff;
+    width: 28%;
+    border-radius: 5px;
+}
+
+.btn-blue:hover {
+    background-color: #000
+}
+
+.btn-secondary {
+    margin-top: 40px;
+    width: 28%
+}
+
+.fa-long-arrow-right {
+    float: left;
+    margin-top: 4px
+}
+
+.fa-long-arrow-left {
+    float: right;
+    margin-top: 4px
+}
+
+select,
+input,
+textarea {
+    padding: 8px 15px 8px 15px;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #FBC02D !important;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+          <div class="col-xl-9 col-lg-10 col-md-11">
+              <div class="card rounded-0 b-0">
+                  <div class="card-header">
+                      <div class="row d-flex justify-content-between">
+                          <div class="">
+                              <h5 class="yellow-text">ספר לנו עוד על הפרויקט שלך?</h5>
+                              <h6>עבור על כל השלבים</h6>
+                          </div>
+                          <div class="text-md-center">
+                              <h5 class="yellow-text">צור קשר</h5>
+                              <h5 style="direction: rtl!important;">0585559595 <span class="fa fa-phone pr-3"></span></h5>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-sm-end justify-content-start px-5">
+                      <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-sm-end justify-content-start px-5">
+                      <div class="count text-center">
+                          <p class="mb-sm-0 pb-sm-0"><strong><span id="cnt">25</span>%</strong> <span class="yellow-text">Completed</span></p>
+                      </div>
+                  </div>
+                  <div class="card-body show pt-0">
+                      <h4 class="heading mb-4 pb-1">מה אנחנו בונים?</h4>
+                      <div class="radio-group row justify-content-between px-5">
+                          <div class="card-block radio selected">
+                              <div class="row justify-content-end d-flex px-3">
+                                  <div class="fa fa-check"></div>
+                              </div>
+                              <div class="row justify-content-center d-flex">
+                                  <div class="pic"> <img src="https://i.imgur.com/4uBi6ib.png" class="pic-0"> </div>
+                                  <h5 class="mb-4">אתר אינטרנט</h5>
+                              </div>
+                          </div>
+                          <div class="card-block radio">
+                              <div class="row justify-content-end d-flex px-3">
+                                  <div class="fa fa-circle"></div>
+                              </div>
+                              <div class="row justify-content-center d-flex">
+                                  <div class="pic"> <img src="https://i.imgur.com/nwy6Wkh.png" class="pic-0"> </div>
+                                  <h5 class="mb-4">חנות וירטואלית</h5>
+                              </div>
+                          </div>
+                          <div class="card-block radio">
+                              <div class="row justify-content-end d-flex px-3">
+                                  <div class="fa fa-circle"></div>
+                              </div>
+                              <div class="row justify-content-center d-flex">
+                                  <div class="pic"> <img src="https://i.imgur.com/74Ez7OS.png" class="pic-0"> </div>
+                                  <h5 class="mb-4">מוצרים נלווים</h5>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row justify-content-center"> <button class="btn btn-blue next mx-2" id="next1">הבא<span class="fa fa-long-arrow-right"></span></button> </div>
+                  </div>
+                  <div class="card-body pt-0">
+                      <h4 class="heading mb-4 pb-1">Personal details</h4> <label class="text-danger mb-3">* Required</label>
+                      <div class="form-group"> <label class="form-control-label">First Name * :</label> <input type="text" id="fname" name="fname" placeholder="" class="form-control" onblur="validate1(1)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Last Name * :</label> <input type="text" id="lname" name="lname" placeholder="" class="form-control" onblur="validate1(2)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Email ID * :</label> <input type="text" id="email" name="email" placeholder="" class="form-control" onblur="validate1(3)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Contact No. * :</label> <input type="text" id="mob" name="mob" placeholder="" class="form-control" onblur="validate1(4)"> </div>
+                      <div class="row justify-content-center"> <button class="btn btn-secondary prev mx-2"><span class="fa fa-long-arrow-left"></span>חזור</button> <button class="btn btn-blue next mx-2" id="next2" onclick="validate1(0)">הבא<span class="fa fa-long-arrow-right"></span></button> </div>
+                  </div>
+                  <div class="card-body pt-0">
+                      <h4 class="heading mb-4 pb-1">Website details</h4> <label class="text-danger mb-3">* Required</label>
+                      <div class="form-group"> <label class="form-control-label">Company Name :</label> <input type="text" id="cname" name="cname" placeholder="" class="form-control" onblur="validate2(1)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Zip Code :</label> <input type="text" id="zip" name="zip" placeholder="" class="form-control" onblur="validate2(2)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Website Title * :</label> <input type="text" id="title" name="title" placeholder="" class="form-control" onblur="validate2(3)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Website Description * :</label> <input type="text" id="desc" name="desc" placeholder="" class="form-control" onblur="validate2(4)"> </div>
+                      <div class="form-group"> <label class="form-control-label">Website Type :</label>
+                          <div class="select mb-3"> <select name="type-info" class="form-control">
+                                  <option>E-commerce</option>
+                                  <option>Entertainment</option>
+                                  <option>Personal</option>
+                                  <option>Business</option>
+                                  <option>Portfolio</option>
+                                  <option>Education</option>
+                              </select> </div>
+                      </div>
+                      <div class="row justify-content-center"> <button class="btn btn-secondary prev mx-2"><span class="fa fa-long-arrow-left"></span>חזור</button> <button class="btn btn-blue next mx-2" id="next3" onclick="validate2(0)">הבא<span class="fa fa-long-arrow-right"></span></button> </div>
+                  </div>
+                  <div class="card-body pt-0">
+                      <h4 class="heading mb-4 pb-1">Confirmation</h4>
+                      <div class="row justify-content-start px-3">
+                          <p>Form has been submitted Successfully ! <br>You will recieve estimation on your email id and contact no.</p>
+                      </div>
+                      <div class="row justify-content-center"> <img src="https://i.imgur.com/krsWHvd.gif" class="check"> </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>				                            
+  <script src="{% static 'userpanel/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script>
+      function validate1(val) {
+v1 = document.getElementById("fname");
+v2 = document.getElementById("lname");
+v3 = document.getElementById("email");
+v4 = document.getElementById("mob");
+
+flag1 = true;
+flag2 = true;
+flag3 = true;
+flag4 = true;
+
+if(val>=1 || val==0) {
+if(v1.value == "") {
+v1.style.borderColor = "red";
+flag1 = false;
+}
+else {
+v1.style.borderColor = "green";
+flag1 = true;
+}
+}
+
+if(val>=2 || val==0) {
+if(v2.value == "") {
+v2.style.borderColor = "red";
+flag2 = false;
+}
+else {
+v2.style.borderColor = "green";
+flag2 = true;
+}
+}
+
+if(val>=3 || val==0) {
+if(v3.value == "") {
+v3.style.borderColor = "red";
+flag3 = false;
+}
+else {
+v3.style.borderColor = "green";
+flag3 = true;
+}
+}
+
+if(val>=4 || val==0) {
+if(v4.value == "") {
+v4.style.borderColor = "red";
+flag4 = false;
+}
+else {
+v4.style.borderColor = "green";
+flag4 = true;
+}
+}
+
+flag = flag1 && flag2 && flag3 && flag4;
+
+return flag;
+}
+
+function validate2(val) {
+v3 = document.getElementById("title");
+v4 = document.getElementById("desc");
+
+flag3 = true;
+flag4 = true;
+
+if(val>=3 || val==0) {
+if(v3.value == "") {
+v3.style.borderColor = "red";
+flag3 = false;
+}
+else {
+v3.style.borderColor = "green";
+flag3 = true;
+}
+}
+
+if(val>=4 || val==0) {
+if(v4.value == "") {
+v4.style.borderColor = "red";
+flag4 = false;
+}
+else {
+v4.style.borderColor = "green";
+flag4 = true;
+}
+}
+
+flag = flag3 && flag4;
+
+return flag;
+}
+
+$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs;
+
+var steps = $(".card-body").length;
+var current = 1;
+setProgressBar(current);
+
+$(".next").click(function(){
+
+str1 = "next1";
+str2 = "next2";
+str3 = "next3";
+
+if(!str2.localeCompare($(this).attr('id')) && validate1(0) == true) {
+val2 = true;
+}
+else {
+val2 = false;
+}
+
+if(!str3.localeCompare($(this).attr('id')) && validate2(0) == true) {
+val3 = true;
+}
+else {
+val3 = false;
+}
+
+if((!str1.localeCompare($(this).attr('id'))) || (!str2.localeCompare($(this).attr('id')) && val2 == true) || (!str3.localeCompare($(this).attr('id')) && val3 == true)) {
+current_fs = $(this).parent().parent();
+next_fs = $(this).parent().parent().next();
+
+$(current_fs).removeClass("show");
+$(next_fs).addClass("show");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+next_fs.css({
+'display': 'block'
+});
+}
+});
+setProgressBar(++current);
+var c = document.getElementById('cnt').textContent;
+document.getElementById('cnt').textContent = Number(c) + 25;
+}
+});
+
+$(".prev").click(function(){
+
+current_fs = $(this).parent().parent();
+previous_fs = $(this).parent().parent().prev();
+
+$(current_fs).removeClass("show");
+$(previous_fs).addClass("show");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+previous_fs.css({
+'display': 'block'
+});
+}
+});
+setProgressBar(--current);
+var c = document.getElementById('cnt').textContent;
+document.getElementById('cnt').textContent = Number(c) - 25;
+});
+
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar").css("width",percent+"%");
+}
+
+$('.radio-group .radio').click(function(){
+$('.selected .fa').removeClass('fa-check');
+$('.selected .fa').addClass('fa-circle');
+$('.radio').removeClass('selected');
+$(this).addClass('selected');
+$('.selected .fa').removeClass('fa-circle');
+$('.selected .fa').addClass('fa-check');
+});
+
+});
+    </script>
+  </body>
+</html>
+
+{% endblock %}

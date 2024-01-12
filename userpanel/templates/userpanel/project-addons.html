@@ -1,0 +1,131 @@
+{% extends 'userpanel/projects_detail.html' %}
+{% load project_tags %}
+{% block main %}
+{% include 'userpanel/projects_status.html' %} 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<style>
+  
+    a:hover {
+      background: none;
+    }
+
+    @media only screen and (max-width:992px) {
+      html, body {
+      overflow-x: hidden!important;
+    }
+    }
+   
+    *, :before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        --i: var(--wide, 1);
+        --j: calc(1 - var(--i));
+        --k: calc(1 - var(--narr, 0));
+        height: 100%;
+        
+        font: 200 1em/1.25 trebuchet ms, arial, sans-serif;
+      }
+      @media (max-width: 992px) {
+        html {
+          --wide: 0 ;
+          margin-right:-3%!important;
+          width: 97%;
+        }
+      }
+    
+    
+
+article {
+    --p: var(--parity, 0);
+    --q: calc(1 - var(--p));
+    --s: calc(1 - 2*var(--p));
+    display: grid;
+    grid-template: calc(var(--i)*0.375rem + var(--j)*4.5rem) calc(var(--i)*6.5rem + var(--j)*3rem) minmax(0, auto)/calc(var(--i)*calc(var(--q)*17.5rem + var(--p)*14.375rem) + var(--j)*100%) calc(var(--i)*calc(var(--q)*14.375rem + var(--p)*17.5rem));
+    grid-gap: 0 calc(var(--i)*2rem);
+    grid-auto-flow: column dense;
+    margin: calc(var(--i)*3.375rem + var(--j)*1em) auto;
+    border: solid calc(var(--i)*0.1875rem) transparent;
+    padding: calc(var(--i)*0.75rem + var(--j)*2vw) calc(var(--i)*4rem + var(--j)*2vw);
+    width: calc(var(--i)*52.25rem + var(--j)*100%);
+    border-radius: calc(var(--i)*9.125rem);
+    box-shadow: calc(var(--i)*1em + var(--j)*0.375em) calc(var(--i)*1em + var(--j)*0.375em) calc(3*calc(var(--i)*1em + var(--j)*0.375em)) rgba(0, 0, 0, 0.5);
+    background: linear-gradient(calc(var(--s)*90deg), #e6e6e6, #ececec) padding-box, linear-gradient(to right bottom, #fff, #c8c8c8) border-box;
+    counter-increment: idx;
+  }
+  article:nth-child(2n) {
+    --parity: 0 ;
+  }
+  
+  h3 {
+    grid-column: calc(var(--i)*var(--q));
+    grid-row: 1/span calc(1 + 2*var(--i));
+    margin: calc(var(--i)*-2.25rem) 0;
+    border: solid calc(var(--i)*0.1875rem) transparent;
+    padding: calc(var(--i)*2.25rem) calc(var(--i)*2.25rem);
+    border-radius: calc(var(--i)*calc(var(--q)*50%)) calc(var(--i)*calc(var(--p)*50%));
+    box-shadow: inherit;
+    background: linear-gradient(calc(var(--s)*45deg), #35a4ee, #164bad) padding-box, linear-gradient(calc(var(--s)*-45deg), #359bee, #1669ad) border-box;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: calc(var(--i) + var(--j)*3);
+    text-align: center;
+  }
+  h3:before {
+    font-size: calc(calc(var(--i)*4 + var(--j)*1)*1em);
+    font-weight: 900;
+    text-shadow: -2px -1px #999;
+    content: counter(idx, decimal-leading-zero) " ";
+  }
+  
+  h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid calc(var(--i)*0.1875rem) #358bee;
+    width: calc(100% - var(--k)*50%);
+    border-radius: calc(var(--i)*1.265625rem + var(--j)*1.5rem);
+    color: #5c16ad;
+    text-transform: capitalize;
+  }
+  h4:before {
+    margin-right: 0.25em;
+    border: solid 2px currentcolor;
+    width: 1em;
+    height: 1em;
+    font-size: 1.75em;
+    line-height: 0.8125;
+    border-radius: 50%;
+    text-align: center;
+    content: "+";
+  }
+  
+  p {
+    padding: 0.75rem 0;
+    padding-left: calc(var(--k)*2.5em);
+    text-indent: calc(var(--k)*2em);
+  }
+</style>
+<div style="padding-top: 5%; padding-right: 10%;">
+
+Your active addons:
+
+{% if projectaddons %}
+    {% for addon in projectaddons  %}
+        <article>
+            <h3><span>{{addon}}</span></h3>
+            <div> {{addon.meta_description}} </div>
+          <a style="padding-top:15%;" href="{{addon.get_absolute_url}}"><i class="fa-regular fa-eye"></i>צפה</a> 
+            
+        </article>
+    {% endfor %}
+{% else %}
+    <p>אין לך תוספות פעילות אנא רכוש פה:</p>
+{% endif %}
+</div>
+{% endblock %}

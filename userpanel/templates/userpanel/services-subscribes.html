@@ -1,0 +1,158 @@
+{% extends 'userpanel/base.html' %}
+{% load static project_tags %}
+{% load project_tags %}
+{% block main %}
+
+<style>
+  body{margin-top:20px;
+    background-color: #e4e6e9;
+    color: #41464d;
+}
+
+
+*, a:hover {
+    all: none;
+}
+
+</style>
+<div  style="margin-top: 10%; padding-right: 5%;">
+
+    <h3> המנויים הפעילים בחשבון זה</h3>
+
+
+
+
+  {% if newlist %}
+  {% for sub in newlist %}
+
+  
+   <div class="container">
+     <div class="mt-5">
+           <div class="d-style bgc-white btn btn-brc-tp btn-outline-green btn-h-outline-green btn-a-outline-green w-100 my-2 py-3 shadow-sm border-2">
+             <div class="row align-items-center">
+               <div class="col-12 col-md-4">
+                 <h4 class="pt-3 text-170 text-600 text-green-d1 letter-spacing">
+                   {{sub.plan_name}}
+                 </h4>
+               </div>
+
+               <div style="position: absolute; padding-right: 5%; margin-top: -23%;">
+               <div class="progress-pie-chart" data-percent="{{sub.start_time |time_left_subs }}">
+                <div class="ppc-progress">
+                  <div class="ppc-progress-fill"></div>
+                </div>
+                <div class="ppc-percents">
+                  <div class="pcc-percents-wrapper">
+                    <span>%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+               <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
+                 {% if sub.is_active %}
+                 <li class="mt-25">
+                   <i class="fa fa-check text-success-m2 text-110 mr-2 mt-1 mb-2"></i>
+                   <span class="text-110">
+                     תשלום: {{sub.period}} 
+                 </span>
+                 </li>
+                 <li>
+                   <i class="fa fa-check text-success-m2 text-110 mr-2 mt-2"></i>
+                   <span>
+                     <span class="text-110">בתוקף עד: {{sub.end_time|date:"d/m/Y"}}</span>
+                   </span>
+                 </li>
+                 <li class="mt-25">
+                   <i class="fa fa-check text-success-m2 text-110 mr-2"></i>
+                   <span class="text-110">
+                    מחיר: {{sub.price}}
+                 </span>
+                 </li>
+                 {% else %}
+                 <li class="mt-25">
+                   <i class="fa fa-times text-danger-m3 text-110 mr-25 mt-1"></i>
+                   <span class="text-110">
+                     סטטוס: לא פעיל 
+                 </span>
+                 </li>{% endif %}
+               </ul>
+               <div class="col-12 col-md-4 text-center">
+
+               
+                {% if sub.kind == 'support'  %}
+
+               <a href="{% url 'users:userpanel:support-details' sub.pk %}" class="f-n-hover btn btn-success btn-raised px-4 py-25 w-75 text-600">פרטים</a>
+                {% elif sub.kind == 'storage' %}
+                <a href="{% url 'users:userpanel:storage-details' sub.pk %}" class="f-n-hover btn btn-success btn-raised px-4 py-25 w-75 text-600">פרטים</a>
+               {% endif %}
+              
+              </div>
+             </div>
+           </div>
+         </div>
+     </div>
+   {% endfor %}
+    
+  {% else %}
+  <h3>אין לך מינוים עדיין.</h3>
+  {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="pro-titlefix" style="margin-top: 100px;">ברו שובך {{request.user.first_name}}, רשימת הפרויקטים שלך: <a style="float: left; margin-left: 10%;"  href="{% url 'users:userpanel:newproject' %}" class="au-btn au-btn-icon au-btn--blue">
+  הוספת פרויקט <i class="zmdi zmdi-plus"></i></a></div>
+
+    {% if projects %}
+    {% for project in projects %}
+        <article>
+            <h3> {{ sub.project_name }}</h3>
+            
+            
+            <p class="mt-5">  מספר מזהה: {{sub.id}}
+             {{sub.status}} - {{sub.is_active}}  </p>
+             <div ><a class="btn btn-primary" href="{% url 'users:userpanel:project-detail' sub.pk %}">ערוך</a></div>
+             </article>
+    {% endfor %}
+{% else %}
+    <p>אין לך תוספות פעילות אנא רכוש פה:</p>
+{% endif %} -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+        var $ppc = $('.progress-pie-chart'),
+          percent = parseInt($ppc.data('percent')),
+          deg = 360*percent/100;
+        if (percent > 50) {
+          $ppc.addClass('gt-50');
+        }
+        $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+        $('.ppc-percents span').html(percent+'%');
+      });
+    </script>
+{% endblock %}

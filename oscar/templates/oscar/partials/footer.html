@@ -1,0 +1,265 @@
+
+<footer class="container">
+    {% block footer %}
+    <style>
+    
+        /** Footer **/
+        
+        footer {
+            color: rgb(133, 196, 255);
+            font-size: 14px;
+        }
+        
+        footer .footer-top {
+            -webkit-transition: .9s;
+            transition: .9s;
+            background: linear-gradient(to bottom, #DBEEFF, #FFFFFF);
+            animation: gradient 55s ease infinite;
+            background-size: 105% 150%;
+            padding: 50px 0px 20px;
+        }
+        
+        footer .address p {
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+        }
+        
+        
+        footer h4 {
+            font-size: 18px;
+            color: #040264;
+            padding-bottom: 12px;
+        }
+        
+        footer .footer-menus {
+            margin-bottom: 30px;
+        }
+        
+        footer .footer-menus ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer .footer-menus ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer .footer-menus ul i {
+            color: #000000;
+            font-size: 12px;
+            margin-right: 3px;
+        }
+        
+        footer .footer-menus ul a {
+            color: rgb(32, 32, 32);
+            text-decoration: none;
+        }
+        
+        footer .footer-menus ul a:hover {
+            color: #cddc39;
+        }
+        
+        footer .newsletter form {
+            margin-top: 30px;
+            background: #3a3a3a;
+            padding: 6px 10px;
+            position: relative;
+            border-radius: 50px;
+            border: 1px solid #3a3a3a;
+        }
+        
+        footer .newsletter form input[type="email"] {
+            border: 0;
+            padding: 5px;
+            background: #3a3a3a;
+            color: #fff;
+        }
+        
+        footer .newsletter form input[type="email"]:focus {
+            outline: none;
+        }
+        
+        footer .newsletter form input[type="submit"] {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            border: 0;
+            font-size: 16px;
+            background: #cddc39;
+            color: #000;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+        
+        footer .newsletter form input[type="submit"]:hover {
+            background: #d5e440;
+        }
+        
+        .footer-bottom {
+            padding: 20px 0px;
+        }
+        
+        footer .footer-bottom a {
+            color: #cddc39;
+            text-decoration: none;
+        }
+        
+        footer .social-linkb {
+            text-align: center;
+            margin: 20px 0px;
+        }
+        
+        @media only screen and (min-width:992px) {
+            footer .social-linkb {
+            margin-left: -50%!important;
+        }
+            
+            
+        }
+        
+        footer .social-btn {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #7297c7;
+            margin: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0px 5px 10px 0px #909090;
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            border: 1px dotted #fff;
+            text-align: center!important;
+            justify-content: center;
+        }
+        
+        footer .social-btn i {
+            line-height: 50px;
+            font-size: 22px;
+            transition: 0.2s linear;
+        }
+        
+        footer .social-btn:hover i {
+            transform: scale(1.3);
+            color: #ff5722;
+        }
+        
+        footer .social-btn::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: #ffffff;
+            transform: rotate(45deg);
+            left: -110%;
+            top: 90%;
+        }
+        
+        footer .social-btn:hover::before {
+            animation: effect 0.6s 1;
+            top: -10%;
+            left: -10%;
+        }
+        
+        footer p a {
+            color: #ff5722;
+        }
+        
+        /*-- Hover Animation Effect --*/
+        @keyframes effect {
+            0% {
+                left: -120%;
+                top: 100%;
+            }
+        
+            50% {
+                left: 10%;
+                top: -30%;
+            }
+        
+            100% {
+                top: -10%;
+                left: -10%;
+            }
+        }
+        
+        </style>
+    <div class="footer-top">
+
+
+		<div class="col-md-8 offset-md-2">
+			<div class="social-linkb">
+				<a class="social-btn" href="#">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a class="social-btn" href="#">
+					<i class="fab fa-google"></i>
+				</a>
+				
+			</div>
+
+	</div>
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="address">
+						<h3>Webmarket</h3>
+						<p class="mb-4 mt-4">חדרה, ישראל</p>
+						<p><strong>טלפון:</strong><a href="tel:0585559595"> 0585559595</a></p>
+						<p><strong>מייל:</strong><a href="mailto:info@webmarket.co.il"> info@webmarket.co.il</a></p>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-sm-6 footer-menus">
+					<h4>לינקים שימושיים</h4>
+					<ul>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:index' %}">בית</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'catalogue:index' %}">חנות</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'wagtail_serve' home %}">מאמרים</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:aboutus' %}">אודותינו</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:contact' %}">יצירת קשר</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-3 col-sm-6 footer-menus">
+					<h4>השירותים שלנו</h4>
+					<ul>
+						<li><i class="fas fa-check"></i> <a href="#">בניית אתרים</a></li>
+						<li><i class="fas fa-check"></i> <a href="#">פתרונות מחשוב</a></li>
+						<li><i class="fas fa-check"></i> <a href="#">שירותי תמיכה</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:support-price' %">מחירון</a></li>
+						<li><i class="fas fa-check"></i> <a href="{% url 'main:faq' %}">שאלות נפוצות</a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-4 col-sm-6 newsletter">
+					<h4>העדכונים שלנו</h4>
+					<p>הצטפרו לרשימת התפוצה שלנו וקבלו מבצעים וחדשות!</p>
+					<form action="" method="post"><input type="email" name="email" /><input type="submit" value=" הרשם" /></form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p class="text-center mb-2">&copy; Copyright <strong>Webmarket</strong>. All Rights Reserved</p>
+					<p class="text-center mb-0">Created by <a href="https://www.Webmarket.co.il/">Webmarket.co.il</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% endblock %}
+</footer>

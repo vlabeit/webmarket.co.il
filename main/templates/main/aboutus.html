@@ -1,0 +1,112 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/aboutus/css/aboutus.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/aboutus/css/font-awesome.css' %}">
+
+
+<div class="aboutus">
+ <!--About-Section-Start-->
+ <section id="about">
+  <div class="container" style="padding-top: 100px;">
+    <div>
+      <div class="heading">
+        <h2>אודותינו</h2>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      <div class="col-md-12 ab-sec">
+        <div class="col-md-6">
+          <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">מי אנחנו?</h3>
+          <p>
+              חברתינו הוקמה בשנת 2021 ומאז מונה לקוחות רבים חדשים המצטרפים אלינו ולשירותינו בכל חודש.
+               אנו נספק לכם מעטפת טכנולוגית של 360 מעלות בכל שלבי העסק. החל מתהליך האפיון, התאמת ובניית האתר ללקוח, אחסון, אבטחה, גיבויים 
+               ותמיכה ועד פתרונות מחשוב מקיפים ומותאמים אישית לארגון ופעילותו השוטפת, כגון שירותי מחשוב ו-IT, תמיכה, גיבויים, רישיונות תוכנה, פתרונות ענן ועוד.
+               הצוות שלנו מורכב ממפתחים ברמה הגבוהה ביותר ואנו שמים דגש על איכות, אבטחה והתחדשות טכנולוגית.
+               בבניית האתר והפתרונות השונים לעסק שלכם אנחנו משתמשים בטכנולוגיות הכי חדשות ומאובטחות בשוק (כגון Python, Javascript, React ועוד), שרתים מהירים ומאובטחים וספקים המובילים בשוק. 
+          </p>
+        </div>
+        <div class="col-md-6 ab-sec-img wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms"><img src="{% static 'main/aboutus/images/aboutus/01.jpg' %}"  alt=""> </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Features-Section-Start-->
+<section id="features">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="heading">
+        <h2>מה אנחנו מספקים?</h2>
+        <div class="line"></div>
+        <p class="mb-4">חברתינו תעניק לכם מעטפת טכנולוגית של 360 מעלות בכל שלבי העסק. 
+          החל מתהליך האפיון, התאמת ובניית האתר ללקוח, אחסון, אבטחה, גיבויים ותמיכה ועד פתרונות מחשוב מקיפים ומותאמים אישית לארגון ופעילותו השוטפת, כגון שירותי מחשוב ו-IT, תמיכה, גיבויים, רישיונות תוכנה, פתרונות ענן ועוד. 
+          זאת תוך כדי שיתוף פעולה עם החברות המובילות בשוק.</p>
+      </div>
+    </div>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active feat-sec" id="tab-1">
+        <div class="col-md-6 tab">
+          <h3 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">מה אנחנו פותרים?</h3>
+
+          <div class="line"></div>
+          <div class="clearfix"></div>
+          <p> אנחנו בוובמרקט מודעים לבעיות העיקריות בתחום בניית האתרים - מחירים לא עקביים, חוסר שקיפות במחירים ובעבודה, עיכובים בהגשה, חוסר הבנה מצד הלקוח, חוסר מידע כללי ואי התאמה לצורכי הלקוח.
+            עקב כך, העמדנו ללקוחתינו חנות דיגטלית אשר פותרות חלק ניכר מבעיות אלו.
+            בחנות אתם יכול לבחור בדיוק איזה סוג אתר אתם צריכים ואלו תוספות אתם יכולים להוסיף לאתר.
+            כך תדעו בדיוק מה המחיר אשר אתם עומדים לשלם בסוף הפיתוח ועל מה. 
+            <br> <br>
+            בנוסף, פיתחנו למענכם מערכת ייחודית לניהול ושירות הלקוחות שלנו, במערכת זאת תמיד תדעו מה סטטוס האתר שלכם ומה צפי סיום האתר, כמו כן תוכלו לפנות אלינו ישירות ולעדכן את הצרכים והדרישות שלכם לאתר ישירות דרך המערכת.
+          </p></div>
+        <div class="col-md-6 tab-img"><img src="{% static 'main/aboutus/images/Features/01.jpg' %}"  class="img-responsive" alt=""></div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!--Fun-Facts-Section-Start-->
+<section id="fun-facts">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-thumbs-o-up"></i> <span class="timer">32</span></h3>
+          <h6>לקוחות מרוצים</h6>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-briefcase fa-6"></i> <span class="timer">59</span></h3>
+          <h6>עבודות שהשולמו</h6>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-product-hunt"></i> <span class="timer">7</span></h3>
+          <h6>מוצרים</h6>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-code"></i> <span class="timer">22</span></h3>
+          <h6>תוספות</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Jquery-->
+<!--Wow-Jquery-->
+<script type="text/javascript" src="{% static 'main/aboutus/js/wow.js' %}"></script>
+<!--Count-Jquey-->
+<script type="text/javascript" src="{% static 'main/aboutus/js/jquery.inview.min.js' %}"></script>
+<!--Main-Scripts-->
+<script type="text/javascript" src="{% static 'main/aboutus/js/script.js' %}"></script>
+</div>
+
+{% endblock %}
+

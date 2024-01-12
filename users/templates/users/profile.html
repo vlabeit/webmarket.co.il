@@ -1,0 +1,213 @@
+{% extends 'userpanel/base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block main %}
+    
+<style>
+  
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+    
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 10px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #3c2e2e;
+    padding:8px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    width: 90%;
+    margin: 3px 10px;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 20px;
+    border: 0;
+    margin-bottom: 1rem;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+</style>
+
+<div class="container" style="margin-top: 100px!important;">
+  <div class="row gutters">
+  <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="account-settings">
+        <div class="user-profile">
+          <div class="user-avatar">
+            {{ p_form.image.url }}
+            <img class="rounded-circle account-img" src="https://webmarketcoil.s3.us-east-2.amazonaws.com/{{ user.profile.image }}">
+          </div>
+        
+         
+          
+          <h6 class="user-email">Webmarket</h6>
+
+          {% if user.first_name or user.last_name %}
+          <h6>{{ full_name }} </h6>
+          {% endif %}
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+        <div class="about">
+          {{ p_form.image }}
+          <h5>החלף תמונה</h5>
+          <p>ברוכים הבאים לwebmarket.co.il.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <h6 class="mb-2 text-primary">פרטים אישיים</h6>
+        </div>
+
+        {% if messages or form.errors %}
+            <div class="messages">
+                <ul>
+                    {% if form.errors %}
+                        {{ form.errors }}
+                    {% endif %}
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="firstName">שם פרטי</label>
+            {% render_field u_form.first_name class="form-control" id="firstName" type="text" %}
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="lastName">שם משפחה</label>
+            {% render_field u_form.last_name class="form-control" id="lastName" type="text" %}
+          </div>
+        </div>
+        {% if u_form.phone_numbers.errors %}
+        {% for field in u_form.phone_numbers %}
+        <td>
+            <div class="alert-danger" style="display: inline; padding: 3%;"> {{u_form.errors.phone_numbers}}</div>   
+        </td>                                             
+        {% endfor %}
+        {% endif %}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="phone">טלפון</label>
+            {% render_field u_form.phone_numbers class="form-control" style="text-align: right;" id="phone_numbers" type="phone" %}
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="fullName">תאריך לידה</label>
+            {% render_field p_form.dob class="form-control" style="text-align: right;" id="dateofbirth" type="date" %}
+          </div>
+        </div>
+        {% if u_form.email.errors %}
+        {% for field in u_form.email %}
+        <td>
+            <div class="alert-danger" style="display: inline;"> {{u_form.errors.email}}</div>   
+        </td>                                             
+        {% endfor %}
+        {% endif %}
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="website">אימייל</label>
+            {% render_field u_form.email class="form-control" style="text-align: right;" id="inputEmail" type="email" %}
+          </div>
+        </div>
+      </div>
+      <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <h6 class="mt-3 mb-2 text-primary">כתובת</h6>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="Street">רחוב</label>
+            {% render_field p_form.street class="form-control" id="firstname" type="text" %}
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="ciTy">דירה</label>
+            {% render_field p_form.apart class="form-control" id="firstname" type="text" %}
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="sTate">עיר</label>
+            {% render_field p_form.city class="form-control" id="firstname" type="text" %}
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="form-group">
+            <label for="zIp">מיקוד</label>
+            {% render_field p_form.zipcode class="form-control" id="firstname" type="text" %}
+          </div>
+        </div>
+      </div>
+      <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="text-right">
+            <button class="btn btn-outline-info mt-4" type="submit">עדכן</button>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock main %}

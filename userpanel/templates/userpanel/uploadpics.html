@@ -1,0 +1,51 @@
+{% extends 'userpanel/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<style>
+    a {
+        all: unset;
+        }
+</style>
+
+
+<div style="margin-top: 8%; padding-right: 5%;">
+    <h2 style="margin-bottom: 20px;">כתוב תוכן</h2>
+    
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+        {% if form.errors %}
+        {% for field in form.errors %}
+            <div class="alert-danger" style="display: inline;"> {{form.errors}}</div>                                                
+        {% endfor %}
+        {% endif %}
+
+  
+
+        <div class="mt-5 mb-3"><h2>העלה תמונות</h2></div>
+            {{form.picfile}}
+
+            {% for img in project.images.all %}
+            <a src="{{ img.url }}">
+                <img src="{{img.url}}" alt="{{img.name}}" width="100" height="100">
+                <span class="caption">{{ img.filename }}</span>
+            </a>
+        {% endfor %}
+        <div class="container mt-5">
+            {% if form.captcha.errors %}
+            {% for field in form.captcha %}
+                <div class="alert-danger" style="display: inline;"> {{form.errors.captcha}}</div>                                                
+            {% endfor %}
+            {% endif %}
+            {{ form.captcha }}
+
+        <button class="btn btn-outline-info" type="submit">אשר</button>
+    </form>
+
+    {% comment %} <form style="display: inline" action="{% url 'users:userpanel:project-detail' projects.pk %}" method="get">
+        <button>חזרה לפרויקט</button>
+      </form> {% endcomment %}
+    </div>
+
+    {% endblock %}

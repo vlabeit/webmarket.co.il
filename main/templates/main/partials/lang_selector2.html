@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+
+
+
+{% get_current_language as LANGUAGE_CODE %}
+        <div class="ininline">
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+                {% if LANGUAGE_CODE == 'he' %}
+                <img src="{% static 'img/he.png' %}">
+                {% elif LANGUAGE_CODE == 'en' %}
+                <img src="{% static 'img/en.png' %}">
+                {% elif LANGUAGE_CODE == 'ru' %}
+                <img src="{% static 'img/ru.png' %}">
+                {% endif %}
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} 
+                    </option>
+                {% endfor %}
+            </select>
+            <input style="display:inline; width: 70px; height: 30px; background: none;" type="submit" value={% trans 'Go' %}>
+        </form>
+    </div>

@@ -1,0 +1,90 @@
+{% load widget_tweaks %}
+<style>
+    .start-project {
+        text-align: right;
+        direction: rtl;
+        margin-top: 50px;
+        margin-right: -5px;
+    }
+    .start-project p {
+        padding-top: 20px;
+        font-size: 17px;
+        
+    }
+    .form-start {
+        border: 2px solid #eee;
+        position: absolute;
+        border-radius: 10px;
+        border-width: 0.1px;
+        right: 100px;
+        height: 25px;
+        width: 60%;
+        margin: 0 10px;
+        padding:15px;
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        /**font-family:inherit;
+        font-size: inherit;
+        resize: vertical;**/
+    }
+
+    select {
+        border: 2px solid #eee;
+        position: absolute;
+        border-radius: 10px;
+        border-width: 0.1px;
+        right: 100px;
+        height: 25px;
+        width: 60%;
+        margin: 0 10px;
+      
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        text-align: center;
+    }
+    
+</style>
+<div class="start-project">
+    <form method="POST">
+        {% csrf_token %}
+            
+       
+            {% if form.errors %}
+            {% for field in form.errors %}
+                <div class="alert-danger" style="display: inline;"> {{form.errors}}</div>                                                
+            {% endfor %}
+            {% endif %}
+
+      
+            {% if form.original_field.errors %}
+            {% for field in form.original_field %}
+                <div class="alert-danger" style="display: inline;"> {{form.errors.original_field}}</div>                                                
+            {% endfor %}
+            {% endif %}
+
+            <p> שם פרויקט: 
+                {% render_field form.project_name size="18" class="form-start"  placeholder="הזן שם לפרויקט"  %}</p>
+            <p> קטגוריה: 
+               
+            {{form.project_category}}</p>
+                
+            <p> קטגורית אתר: 
+                {% render_field form.site_category size="18" class="form-start"  placeholder="הזן תחום אתר"  %}</p>
+            <p> שפה עיקרית: 
+                {% render_field form.add_languages size="18" class="form-start"  placeholder="הזן שפה עיקרית"  %}</p>
+                                
+
+
+        <div class="container mt-5">
+            {% if form.captcha.errors %}
+            {% for field in form.captcha %}
+                <div class="alert-danger" style="display: inline;"> {{form.errors.captcha}}</div>                                                
+            {% endfor %}
+            {% endif %}
+            {{ form.captcha }}
+        </div>
+
+            <p style="margin-top:40px;">לחץ התחל על מנת להתחיל פרויקט חדש</p>
+            <button class="btn btn-outline-info" type="submit">התחל</button>
+        </div>
+    </form>
+</div>
+

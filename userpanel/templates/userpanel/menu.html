@@ -1,0 +1,55 @@
+{% load static %}
+
+<style>
+    .nav {
+        overflow: hidden;
+    }
+    .icon-user {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    background: no-repeat;
+    }
+
+    .home {background: url("{% static 'img/icons/home.png' %}");}
+    .email {background: url("{% static 'img/icons/email.png' %}");}
+    .profile {background: url("{% static 'img/icons/profile.png' %}");}
+    .shop {background: url("{% static 'img/icons/shop.png' %}");}
+    .account {background: url("{% static 'img/icons/account.png' %}");}
+    .account_2 {background: url("{% static 'img/icons/account_2.png' %}");}
+    .account_3 {background: url("{% static 'img/icons/account_3.png' %}");}
+    .account_4 {background: url("{% static 'img/icons/account_4.png' %}");}
+    .settings {background: url("{% static 'img/icons/settings.png' %}");}
+    .security {background: url("{% static 'img/icons/security.png' %}");}
+    .notification {background: url("{% static 'img/icons/notification.png' %}");}
+    .pass {background: url("{% static 'img/icons/pass.png' %}");}
+    .profile2 {background: url("{% static 'img/icons/profile2.png' %}");}
+    .facebook {background: url("{% static 'img/icons/facebook.png' %}");}
+    .api {background: url("{% static 'img/icons/api.png' %}");}
+    .he {background: url("{% static 'img/he.png' %}");}
+    .en {background: url("{% static 'img/en.png' %}");}
+    .ru {background: url("{% static 'img/ru.png' %}");}
+</style>
+
+
+<li><a href="/dashboard/"><i class="icon-user home"></i>ראשי</a></li>
+<li><a href="{% url 'users:profile' %}"><i class="icon-user profile"></i>פרופיל אישי</a></li>
+<li><a href="{% url 'catalogue:index' %}"><i class="icon-user shop"></i>חנות</a></li>
+<li>
+    <a class="js-arrow" href="#"><i class="icon-user account"></i>חשבון</a>
+    <ul class="list-unstyled navbar__sub-list js-sub-list" style="margin-right: 20px;">
+        <li><a class="one" href="#"><i class="icon-user profile"></i>כללי</a></li>
+        <li><a href="{% url 'users:userpanel:service-subs-list' %}"><i class="icon-user account_3"></i>מינויים</a></li>
+        <li><a href="#"><i class="icon-user account_4"></i>חיובים</a></li>
+    </ul>
+</li>
+<li>
+    <a class="js-arrow" href="#"><i class="icon-user email"></i>שירות לקוחות</a>
+    <ul class="list-unstyled navbar__sub-list js-sub-list">
+        <li><a href="{% url 'helpdesk:home' %}">פתיחת פנייה</a></li>
+        <li><a href="#">צ'אט לייב</a></li>
+    </ul>
+</li>
+<li><a href="{% url 'users:settings' %}"><i class="icon-user settings"></i>הגדרות</a></li>
+<li><a href="/"><i class="fas fa-desktop"></i>חזרה לאתר</a></li>
+

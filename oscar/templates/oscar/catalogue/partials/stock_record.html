@@ -1,0 +1,75 @@
+{% load currency_filters %}
+{% load i18n %}
+{% load purchase_info_tags %}
+
+<style>
+    
+@-webkit-keyframes salePulse {
+    from { background-color: #a00; }
+    50% { background-color: #c00; -webkit-transform:scale(1.1); }
+    to { background-color: #a00; }
+    }
+    
+    mark.sale {
+    background:#c00; /* fallback for non-webkit browsers */
+    display:block; /* or it wont work */
+    width:100px;
+    text-align:center;
+    line-height:2em;
+    border-radius:3em;
+    color:#fff;
+    -webkit-animation-name:salePulse;
+    -webkit-animation-duration:1s;
+    -webkit-animation-iteration-count:infinite;
+    margin: 0 auto;
+    }
+</style>    
+
+{% purchase_info_for_product request product as session %}
+
+{% if session.price.exists %}
+    {% if session.price.excl_tax == 0 %}
+        <p class="price_color">{% trans "Free" %}</p>
+    {% elif session.price.is_tax_known %}
+        {% comment %} <p class="price_color">{{ session.price.incl_tax|currency:session.price.currency }}</p> {% endcomment %}
+        {% if benefits %}
+            <p class="price_color" style="color: red; text-decoration: line-through;">{{ session.price.excl_tax|currency:session.price.currency }}</p>
+        {% else %}
+            <p class="price_color">{{ session.price.excl_tax|currency:session.price.currency }}</p>
+        {% endif %}
+    {% else %}
+        <p class="price_color">{{ session.price.excl_tax|currency:session.price.currency }}</p>
+    {% endif %}
+
+    <!--Added discount price-->
+    {% if benefits %}
+    <mark class="sale">מוצר בהנחה!</mark>
+    {% with type=benefits.type %}
+    {% if type == 'Percentage' %} 
+    <p> מחיר לאחר {{benefits.value}}% הנחה </p>
+    <p class="price_color">{{ session.price.excl_tax |percent:benefits.value|currency:session.price.currency }}</p>
+    {% elif type == 'Absolute' %}
+    <p> מחיר לאחר {{benefits.value}}{{session.price.currency }} הנחה </p>
+    <p class="price_color">{{ session.price.excl_tax |subtract:benefits.value|currency:session.price.currency }}</p>
+    {% endif %}
+    {% endwith %}
+    {% endif %}
+
+    
+    {{benefits2}}
+    
+{% else %}
+    <p class="price_color">&nbsp;</p>
+{% endif %}
+<p class="{{ session.availability.code }} availability">
+    {% if session.availability.is_available_to_buy %}
+        <i class="fas fa-check-circle"></i>
+    {% else %}
+        <i class="fas fa-ban"></i>
+    {% endif %}
+    {% if verbose %}
+        {{ session.availability.message }}
+    {% else %}
+        {{ session.availability.short_message }}
+    {% endif %}
+</p>

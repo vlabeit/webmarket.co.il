@@ -1,0 +1,45 @@
+    <style>
+        
+
+
+        .hero-title2 {
+            letter-spacing: 0.1em; font-size: 1.2rem; color: rgb(0,0,0);
+            text-shadow: 0 0.1em 10px ;
+            margin: 0;
+            padding: 10px;
+            float: right;
+           
+        }
+       
+        @media only screen and (max-width: 768px) {
+            .hero-title2 {
+                font-size: 1rem!important;
+                padding-top: 50px;
+            }
+        }
+
+           @media only screen and (min-width: 769px) and (max-width: 991px) {
+            .hero-title2 {
+                font-size: 1rem!important;
+            }
+        }
+        @media only screen and (min-width: 1400px) {
+        .btnmarg {
+            margin-top: 15%;
+        }
+        }
+    </style>
+    <div>
+        <div class="hero-content">
+            <!--<h4  style="margin-top: 50px; margin-bottom: -50px;"><i class="fa fa-check ml-3"></i><span id="word">!לראשונה בישראל</span></h4>-->
+            <h1 class="sign__word2"><br>חנות דיגיטלית<br> לבניית אתרים<br> ופתרונות תוכנה לעסקים</h1>
+            <!-- class="display-5 text-white mb-20" style="font-size: 3.5rem"-->
+            <h1 style="line-height: 2rem;" class="hero-title2">אנחנו מחזירים לכם את השליטה! <br>
+                הכנסו לחנות ורכשו את כל פתרונות הטכנולוגיה האפשריים לעסק שלך! <br>
+                פיתוח אתרים וחנויות וירטואליות, רישויי תוכנה, פתרונות אבטחה,גיבויים, ענן ועוד.
+            </h1><div style=" float: right; position:relative;" class=" mr-2">
+                <p class="btnmarg">
+                <a href="{% url 'catalogue:index' %}"><button style="position:relative;" class="bn632-hover bn26 ml-1 mt-1">חנות</button></a>
+                <a href="https://youtu.be/bS5P_LAqiVg" class="play-btn lightbox" ><i class="fas fa-question" style="font-size:24px"></i> איך זה עובד?</a>
+                </p></div>
+            </div>

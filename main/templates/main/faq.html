@@ -1,0 +1,239 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin="anonymous" />
+<div class="container-fluid">
+    <!-- Row -->
+    <div class="row">  
+        <div class="col-xl-12 pa-0">
+            <div class="anim-elements">
+                <div class="anim-element"></div>
+                <div class="anim-element"></div>
+                <div class="anim-element"></div>
+                <div class="anim-element"></div>
+                <div class="anim-element"></div>
+            </div>
+            <div class="faq-search-wrap bg-teal-light-3">
+                <div class="container">
+                    <h1 class="display-5 text-white mb-20" style="margin-top: 150px;">חפש שאלות נפוצות או בחר קטגוריה</h1>
+                    <div class="form-group w-100 mb-0">
+                        <div class="input-group">
+                            <input class="form-control form-control-lg filled-input bg-white" placeholder="Search by keywords" type="text">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><span class="feather-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-sm-60 mt-30">
+                <div class="hk-row">
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <h6 class="card-header">
+                                            קטגוריה
+                                        </h6>
+                                        <div id="nav">
+
+                            <ul class="list-group list-group-flush">
+                                <a href="#content1" class="list-group-item d-flex align-items-center ">
+                                    <i class="ion ion-md-sunny ml-15"></i>בניית אתרים<span class="badge badge-light badge-pill mr-15">04</span>
+                                </a>
+                                <a href="#content2" class="list-group-item d-flex align-items-center">
+                                    <i class="ion ion-md-unlock ml-15"></i>אחסון<span class="badge badge-light badge-pill mr-15">04</span>
+                                </a>
+                                <a href="#content3" class="list-group-item d-flex align-items-center">
+                                    <i class="ion ion-md-bookmark ml-15"></i>גיבויים<span class="badge badge-light badge-pill mr-15">04</span>
+                                </a>
+                                <a href="#content4" class="list-group-item d-flex align-items-center">
+                                    <i class="ion ion-md-filing ml-15"></i>אבטחה<span class="badge badge-light badge-pill mr-15">04</span>
+                                </a>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-8">
+                        <div class="card card-lg toggle mb-5" id="content1">
+                            <h3 class="card-header border-bottom-0">
+                                            בניית אתרים
+                                        </h3>
+                            <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between activestate">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_1a" aria-expanded="true">שאלה</a>
+                                    </div>
+                                    <div id="collapse_1a" class="collapse" data-parent="#accordion_2" role="tabpanel">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2a" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_2a" class="collapse" data-parent="#accordion_2">
+                                        <div class="card-body pa-15">תשובה</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3a" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_3a" class="collapse" data-parent="#accordion_2">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4a" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_4a" class="collapse" data-parent="#accordion_2">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-lg toggle mb-5" id="content2">
+                            <h3 class="card-header border-bottom-0">
+                                            אחסון
+                                        </h3>
+                            <div class="accordion accordion-type-2 accordion-flush" id="accordion_3">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between activestate">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_1b" aria-expanded="true">שאלה</a>
+                                    </div>
+                                    <div id="collapse_1b" class="collapse" data-parent="#accordion_3" role="tabpanel">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2b" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_2b" class="collapse" data-parent="#accordion_3">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3b" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_3b" class="collapse" data-parent="#accordion_3">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4b" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_4b" class="collapse" data-parent="#accordion_3">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+
+                        
+                        <div class="card card-lg toggle mb-5" id="content3">
+                            <h3 class="card-header border-bottom-0">
+                                            גיבויים
+                                        </h3>
+                            <div class="accordion accordion-type-2 accordion-flush" id="accordion_4">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between activestate">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_1c" aria-expanded="true">שאלה</a>
+                                    </div>
+                                    <div id="collapse_1c" class="collapse" data-parent="#accordion_4" role="tabpanel">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2c" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_2c" class="collapse" data-parent="#accordion_4">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3c" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_3c" class="collapse" data-parent="#accordion_4">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4c" aria-expanded="false">שאלה</a>
+                                    </div>
+                                    <div id="collapse_4c" class="collapse" data-parent="#accordion_4">
+                                        <div class="card-body pa-15">תשובה.</div>
+                                    </div>
+                                </div>
+                       
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div class="card card-lg toggle mb-5" id="content4">
+                        <h3 class="card-header border-bottom-0">
+                                        אבטחה
+                                    </h3>
+                        <div class="accordion accordion-type-2 accordion-flush" id="accordion_5">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between activestate">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_1d" aria-expanded="true">שאלה</a>
+                                </div>
+                                <div id="collapse_1d" class="collapse" data-parent="#accordion_5" role="tabpanel">
+                                    <div class="card-body pa-15">תשובה.</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2d" aria-expanded="false">שאלה</a>
+                                </div>
+                                <div id="collapse_2d" class="collapse" data-parent="#accordion_5">
+                                    <div class="card-body pa-15">תשובה.</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3d" aria-expanded="false">שאלה</a>
+                                </div>
+                                <div id="collapse_3d" class="collapse" data-parent="#accordion_5">
+                                    <div class="card-body pa-15">תשובה.</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4d" aria-expanded="false">שאלה</a>
+                                </div>
+                                <div id="collapse_4d" class="collapse" data-parent="#accordion_5">
+                                    <div class="card-body pa-15">תשובה.</div>
+                                </div>
+                            </div>
+                   
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Row -->
+</div>
+
+<!--Jquery-->
+<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+</body>
+
+{% endblock %}
