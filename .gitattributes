@@ -1,4 +1,4 @@
-*.html linguist-vendored
+/oscar/*.html linguist-vendored
 
 
 
