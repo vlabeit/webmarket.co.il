@@ -1,4 +1,3 @@
-oscar/templates/*.html linguist-vendored
-
+oscar/templates/ linguist-vendored
 
 
